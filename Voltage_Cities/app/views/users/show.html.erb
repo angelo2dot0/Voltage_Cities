@@ -3,4 +3,18 @@
   <%= @user.username %> 
   <%= @user.current_city %> 
   Joined <%= @user.created_at.strftime('%b. %d, %Y') %>
+  <br>
+  <%= image_tag @user.avatar.url(:thumb) %>
+
+ <ul>
+ 	<% if @posts.count==0 %>
+ 		no posts 
+ 	<% end %>
+ 	<%@posts.each do |post| %> 
+ 	<li> <%= post.title %></li>
+
+ 	<% end %>
+ </ul>
+
+ 
 </div>
