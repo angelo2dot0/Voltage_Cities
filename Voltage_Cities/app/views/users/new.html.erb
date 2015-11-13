@@ -1,17 +1,27 @@
-Sign Up
-
-<%= form_for @user do |f| %>
-  <div>
-    <%= f.text_field :first_name, placeholder: "First Name" %>
+<div class="signup-bg">
+  <div class="text-center" style="padding:50px 0">
+  <%= form_for @user do |f| %>
+ 
+    <div class="logo">SIGN UP</div> 
+  
+      <div class="signup-background" id="signup"></div>
+       <div class="container">
+           <div class="col-sm-4 col-sm-offset-4">
+               <div class="well">
+                      <%= f.text_field :username, class: "form-control", id: "reg_username", placeholder: "User Name" %>
+                      <br>
+                      <%= f.text_field :artist_name, class: "form-control", id: "reg_artist_name",  placeholder: "Artist Name" %>
+                      <br>
+                      <%= f.text_field :current_city, class: "form-control", id: "reg_current_city", placeholder: "Current City" %>
+                      <br>
+                      <%= f.text_field :email, class: "form-control", id: "reg_email", placeholder: "Email" %>
+                      <br>
+                      <%= f.password_field :password, class: "form-control", id: "reg_password", placeholder: "Password" %>
+                      <br>
+                  <%= f.submit "CLICK!", class: "login-button" %>
+                </div>
+            </div>
+        </div>
+  <% end %> 
   </div>
-  <div>
-    <%= f.text_field :last_name, placeholder: "Last Name" %>
-  </div>
-  <div>
-    <%= f.text_field :email, placeholder: "Email" %>
-  </div>
-  <div>
-    <%= f.password_field :password, placeholder: "Password" %>
-  </div>
-  <%= f.submit "Sign Up" %>
-<% end %> 
+</div>

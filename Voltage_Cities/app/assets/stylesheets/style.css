@@ -1,8 +1,86 @@
+body {
 
-#background {
-	background: url('background.jpg') no-repeat; 
-	max-width: 600px;
+  font-family: 'Dosis', sans-serif;
+  line-height: 1.42857143;
+}
+/* sets base style for each page */
+
+
+/* set background image per page */
+.login-bg {
+	background: url(login-bg.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 100vh;
 }
 
+/* set background image per page */
+.signup-bg {
+	background: url(signup-bg.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 100vh;
+}
 
+.logo {
+	font-family: 'Dosis', sans-serif;
+	font-weight: bold;
+	font-size: 30px;
+	color: white;
+}
 
+.login-button {
+	position: absolute;
+    right: -25px;
+    top: 50%;
+    background: #FF00EE;
+    color: white;
+    padding: 11px 0;
+    width: 60px;
+    height: 60px;
+    margin-top: -25px;
+    border: 5px solid white;
+    border-radius: 50%;
+    font-family: 'Varela Round';
+
+}
+
+.form-control {
+
+	border-bottom-color: rgb(239, 239, 239);
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+	color: rgb(153, 153, 153);
+	display: block;
+	font-family: 'Varela Round';
+	font-size: 14px;
+	height: 36px;
+	line-height: 20px;
+	margin-bottom: 0px;
+	padding: 10px 20px;
+	position: relative;
+	text-align: left;
+
+}
+
+.well {
+    background: #ffffff;
+    border-color: white;
+    background-image: initial;
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: rgb(255, 255, 255);
+    color: #999999;
+    border-radius: 8px;
+    padding: 10px 20px;
+}

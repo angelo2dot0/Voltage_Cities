@@ -23,4 +23,5 @@ class WelcomeController < ApplicationController
     @user = User.find(params[:id])
     render :show
   end
+
 end

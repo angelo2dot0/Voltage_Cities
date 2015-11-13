@@ -1,0 +1,22 @@
+<div class="login-bg">
+	<div class="text-center" style="padding:50px 0">
+	<%= form_for @user, url: "/sessions", method: "post" do |f| %>
+
+	<div class="logo">LOG IN</div> 
+
+		<div class="login-background" id="login"></div>
+			<div class="container">
+				<div class="col-sm-4 col-sm-offset-4">
+					<div class="well">
+						<%= f.text_field :username, class: "form-control", id: "reg_username", placeholder: "User Name" %>
+						<br>
+						<%= f.password_field :password, class: "form-control", id: "reg_password", placeholder: "Password" %>
+						<br>
+						<%= f.submit "CLICK!", class: "login-button" %>
+					</div>
+				</div>
+			</div>
+
+		<% end %> 
+	</div>
+</div>
