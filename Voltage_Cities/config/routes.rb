@@ -27,4 +27,10 @@ Rails.application.routes.draw do
 
   #sign in route
   post "/sessions", to: "sessions#create"
+
+  #editing the profile page 
+  get "/users/:id/edit", to: "users#edit"
+
+  #updating the user
+  put "/users" , to: 'users#update'
 end
