@@ -1,3 +1,8 @@
-body { background: url("welcome.jpg"); }
+
+#background {
+	background: url('background.jpg') no-repeat; 
+	max-width: 600px;
+}
+
 
 
