@@ -1,11 +1,14 @@
 class UsersController < ApplicationController
+
 	def index
 	end
 
 	def show
 		@user = User.find(params[:id])
     	@posts = @user.posts 
+
     	@current_user = current_user
+
     	render :show
 
 	end
@@ -32,4 +35,5 @@ class UsersController < ApplicationController
 		login(@user) # <-- login the user
     	redirect_to user_path(@user) # <-- go to show
 	end 
+
 end
