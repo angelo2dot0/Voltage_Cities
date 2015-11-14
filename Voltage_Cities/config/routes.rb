@@ -3,8 +3,13 @@ Rails.application.routes.draw do
   root to: "welcome#index"
 
   resources :users, except: [:new] do
-    resources :posts
+    resources :posts, except: [:new]
   end
+
+  resources :cities do 
+    resources :posts 
+  end 
+
   get "/signup", to: "users#new", as: "new_user"
 
   # #sign in user page
