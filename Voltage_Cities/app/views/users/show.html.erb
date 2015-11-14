@@ -27,6 +27,7 @@
       <div class="container">
             <div class="col-md-12 col-xs-12" align="center">
 
+
                   <div class="outter"><%= image_tag @user.avatar.url(:thumb), :class => 'image-circle'%></div>  
                   <h1>  Welcome, <%= @user.artist_name %> </h1>
                   <h2>  USERNAME: <%= @user.username %> <br>
@@ -35,6 +36,13 @@
                   <h2> 
                   <main-button><%= link_to "ADD POST", "/cities", class: "main-button" %> </main-button>
             </div>
+
+ 	<% end %>
+ </ul>
+ <% if @user.id == @current_user.id%>
+  <%=link_to 'Edit your profile', edit_user_path(@user) %>
+ <%end%>
+
 
     <br>
     <br>
