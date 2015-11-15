@@ -1,0 +1,273 @@
+body {
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.42857143;
+  font-size: 12px;
+}
+
+h1 {
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 150%;
+}
+
+h2 {
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: 0px;
+  line-height: 150%;
+}
+
+h3 {
+  position: center;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: 0px;
+  line-height: 150%;
+  text-transform: uppercase;
+}
+
+p {
+  position: center;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  font-size: 12px;
+  font-weight: normal;
+  letter-spacing: 0px;
+  line-height: 150%;
+}
+
+
+#logo{
+width:200px;
+background-image:url(logo.gif);
+}
+
+/* set background image per page */
+.login-bg {
+	background: url(login-bg.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 100vh;
+}
+
+/* set background image per page */
+.signup-bg {
+	background: url(signup-bg.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 100vh;
+}
+
+/* set background image per page */
+.profile-bg {
+	background: url(profile-bg.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: auto;
+}
+
+
+/* set background image per page */
+.welcome-bg {
+	background: url(welcome-bg.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 100vh;
+}
+
+.logo {
+	font-family: 'Raleway', sans-serif;
+	font-weight: bold;
+	font-size: 30px;
+	color: white;
+}
+
+.login-button {
+	font-family: 'Raleway', sans-serif;
+	position: absolute;
+    right: -25px;
+    top: 50%;
+    background: #FF00EE;
+    color: white;
+    padding: 11px 0;
+    width: 60px;
+    height: 60px;
+    margin-top: -25px;
+    border: 5px solid white;
+    border-radius: 50%;
+    
+}
+
+.login-button:hover {
+  	color: white;
+	-webkit-animation:spin 1s linear infinite;
+	-moz-animation:spin 1s linear infinite;
+	animation:spin 1s linear infinite;
+	}
+	@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+	@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+	@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+
+
+.main-button {
+	font-family: 'Raleway', sans-serif;
+	background: none;
+    color: white;
+    padding: 11px 11px;
+    width: 60px;
+    height: 60px;
+    border: 3px solid white; 
+}
+
+.main-button:hover {
+	 color: white;
+	 line-height: none;
+}
+
+.form-control {
+	font-family: 'Raleway', sans-serif;
+	border-bottom-color: rgb(239, 239, 239);
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+	color: rgb(153, 153, 153);
+	display: block;
+	font-size: 14px;
+	height: 36px;
+	line-height: 20px;
+	margin-bottom: 0px;
+	padding: 10px 20px;
+	position: relative;
+	text-align: left;
+
+}
+
+.well {
+    background: #ffffff;
+    border-color: white;
+    background-image: initial;
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: rgb(255, 255, 255);
+    color: #999999;
+    border-radius: 0px;
+    padding: 10px 20px;
+}
+
+
+#profile-header {
+	background: url(login-bg.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 90vh;
+	width: 100%;
+
+}
+
+
+
+.navbar, .dropdown-menu{
+background:rgba(255,255,255,0.25);
+border: none;
+
+}
+
+.nav>li>a, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover, .dropdown-menu>li>a, .dropdown-menu>li{
+  border-bottom: 3px solid transparent;
+}
+.nav>li>a:focus, .nav>li>a:hover,.nav .open>a, .nav .open>a:focus, .nav .open>a:hover, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
+  border-bottom: 3px solid transparent;
+  background: none;
+}
+.navbar a, .dropdown-menu>li>a, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
+ color: #fff;
+}
+.dropdown-menu{
+      -webkit-box-shadow: none;
+    box-shadow:none;
+}
+
+.nav li:hover:nth-child(8n+1), .nav li.active:nth-child(8n+1){
+  border-bottom: #C4E17F 5px solid;
+}
+.nav li:hover:nth-child(8n+2), .nav li.active:nth-child(8n+2){
+  border-bottom: #F7FDCA 5px solid;
+}
+.nav li:hover:nth-child(8n+3), .nav li.active:nth-child(8n+3){
+  border-bottom: #FECF71 3px solid;
+}
+.nav li:hover:nth-child(8n+4), .nav li.active:nth-child(8n+4){
+  border-bottom: #F0776C 5px solid;
+}
+.nav li:hover:nth-child(8n+5), .nav li.active:nth-child(8n+5){
+  border-bottom: #DB9DBE 5px solid;
+}
+.nav li:hover:nth-child(8n+6), .nav li.active:nth-child(8n+6){
+  border-bottom: #C49CDE 5px solid;
+}
+.nav li:hover:nth-child(8n+7), .nav li.active:nth-child(8n+7){
+  border-bottom: #669AE1 5px solid;
+}
+.nav li:hover:nth-child(8n+8), .nav li.active:nth-child(8n+8){
+  border-bottom: #62C2E4 5px solid;
+}
+
+
+.image-circle{
+    border-radius: 50%;
+    width: 175px;
+    height: 175px;
+    border: 4px solid #FFF;
+    margin: 10px;
+}
+
+.outter{
+    padding: 0px;
+    border: 1px solid rgba(255, 255, 255, 0.29);
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+@media ( min-width: 768px ) {
+    .grid-divider {
+        position: relative;
+        padding: 0;
+    }
+    .grid-divider>[class*='col-'] {
+        position: static;
+    }
+    .grid-divider>[class*='col-']:nth-child(n+2):before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+    }
+    .col-padding {
+        padding: 0 15px;
+    }
+}
