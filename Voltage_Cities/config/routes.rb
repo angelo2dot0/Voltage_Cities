@@ -3,8 +3,13 @@ Rails.application.routes.draw do
   root to: "welcome#index"
 
   resources :users, except: [:new] do
-    resources :posts
+    resources :posts, except: [:new]
   end
+
+  resources :cities do 
+    resources :posts , except: [:destroy]
+  end 
+
   get "/signup", to: "users#new", as: "new_user"
 
   # #sign in user page
@@ -12,6 +17,9 @@ Rails.application.routes.draw do
 
   #sign in route
   post "/sessions", to: "sessions#create"
+
+  #destroy post
+  delete '/cities/:city_id/posts/:id', to: 'posts#destroy', as: 'delete_city_post'
 
   # #profile
   #get "/users/:id", to: "users#show", as: "user"

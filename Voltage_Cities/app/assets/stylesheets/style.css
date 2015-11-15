@@ -1,19 +1,52 @@
 body {
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Raleway', sans-serif;
   line-height: 1.42857143;
+  font-size: 12px;
 }
 
 h1 {
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Raleway', sans-serif;
   color: white;
-  text-shadow: black 0.1em 0.1em 0.2em;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 150%;
 }
+
+h2 {
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: 0px;
+  line-height: 150%;
+}
+
+h3 {
+  position: center;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: 0px;
+  line-height: 150%;
+  text-transform: uppercase;
+}
+
+p {
+  position: center;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  font-size: 12px;
+  font-weight: normal;
+  letter-spacing: 0px;
+  line-height: 150%;
+}
+
 
 #logo{
 width:200px;
-
 background-image:url(logo.gif);
 }
 
@@ -37,6 +70,16 @@ background-image:url(logo.gif);
 	height: 100vh;
 }
 
+/* set background image per page */
+.profile-bg {
+	background: url(profile-bg.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: auto;
+}
+
 
 /* set background image per page */
 .welcome-bg {
@@ -49,13 +92,14 @@ background-image:url(logo.gif);
 }
 
 .logo {
-	font-family: 'Dosis', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	font-weight: bold;
 	font-size: 30px;
 	color: white;
 }
 
 .login-button {
+	font-family: 'Raleway', sans-serif;
 	position: absolute;
     right: -25px;
     top: 50%;
@@ -67,11 +111,11 @@ background-image:url(logo.gif);
     margin-top: -25px;
     border: 5px solid white;
     border-radius: 50%;
-    font-family: 'Varela Round';
+    
 }
 
 .login-button:hover {
-  	color: #555555;
+  	color: white;
 	-webkit-animation:spin 1s linear infinite;
 	-moz-animation:spin 1s linear infinite;
 	animation:spin 1s linear infinite;
@@ -83,29 +127,27 @@ background-image:url(logo.gif);
 
 
 .main-button {
-	background: #FF00EE;
+	font-family: 'Raleway', sans-serif;
+	background: none;
     color: white;
     padding: 11px 11px;
     width: 60px;
     height: 60px;
-    border: 5px solid white;
-    font-family: 'Varela Round';
-
+    border: 3px solid white; 
 }
 
 .main-button:hover {
-	 color: #555555;
+	 color: white;
 	 line-height: none;
 }
 
 .form-control {
-
+	font-family: 'Raleway', sans-serif;
 	border-bottom-color: rgb(239, 239, 239);
 	border-bottom-style: solid;
 	border-bottom-width: 2px;
 	color: rgb(153, 153, 153);
 	display: block;
-	font-family: 'Varela Round';
 	font-size: 14px;
 	height: 36px;
 	line-height: 20px;
@@ -130,13 +172,13 @@ background-image:url(logo.gif);
     background-clip: initial;
     background-color: rgb(255, 255, 255);
     color: #999999;
-    border-radius: 8px;
+    border-radius: 0px;
     padding: 10px 20px;
 }
 
 
 #profile-header {
-		background: url(login-bg.jpg) no-repeat center center fixed;
+	background: url(login-bg.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -148,100 +190,88 @@ background-image:url(logo.gif);
 
 
 
+.navbar, .dropdown-menu{
+background:rgba(255,255,255,0.25);
+border: none;
 
-
-
-
-
-
-nav.navbar-findcond { 
-	background: #fff; 
-	border-color: #ccc; 
-	box-shadow: 0 0 2px 0 #ccc; 
 }
 
-nav.navbar-findcond a { 
-	color: ##555555; }
-
-nav.navbar-findcond ul.navbar-nav a { 
-	color: ##555555; border-style: solid; 
-	border-width: 0 0 2px 0; 
-	border-color: #fff; 
-	border-bottom-width: 5px;
-    border-left-width: 0;
-    padding-bottom: 10px;
-    padding-left: 14px;
+.nav>li>a, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover, .dropdown-menu>li>a, .dropdown-menu>li{
+  border-bottom: 3px solid transparent;
+}
+.nav>li>a:focus, .nav>li>a:hover,.nav .open>a, .nav .open>a:focus, .nav .open>a:hover, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
+  border-bottom: 3px solid transparent;
+  background: none;
+}
+.navbar a, .dropdown-menu>li>a, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
+ color: #fff;
+}
+.dropdown-menu{
+      -webkit-box-shadow: none;
+    box-shadow:none;
 }
 
-nav.navbar-findcond ul.navbar-nav a:hover,
-nav.navbar-findcond ul.navbar-nav a:visited,
-nav.navbar-findcond ul.navbar-nav a:focus,
-nav.navbar-findcond ul.navbar-nav a:active { 
-	background: #fff; 
+.nav li:hover:nth-child(8n+1), .nav li.active:nth-child(8n+1){
+  border-bottom: #C4E17F 5px solid;
 }
-
-nav.navbar-findcond ul.navbar-nav a:hover { 
-	border-color: ##555555; 
+.nav li:hover:nth-child(8n+2), .nav li.active:nth-child(8n+2){
+  border-bottom: #F7FDCA 5px solid;
 }
-
-nav.navbar-findcond li.divider { 
-	background: #ccc; 
+.nav li:hover:nth-child(8n+3), .nav li.active:nth-child(8n+3){
+  border-bottom: #FECF71 3px solid;
 }
-nav.navbar-findcond button.navbar-toggle { 
-	background: ##555555; 
-	border-radius: 2px; 
+.nav li:hover:nth-child(8n+4), .nav li.active:nth-child(8n+4){
+  border-bottom: #F0776C 5px solid;
 }
-
-nav.navbar-findcond button.navbar-toggle:hover { 
-	background: #999; 
+.nav li:hover:nth-child(8n+5), .nav li.active:nth-child(8n+5){
+  border-bottom: #DB9DBE 5px solid;
 }
-
-nav.navbar-findcond button.navbar-toggle > span.icon-bar { 
-	background: #fff; 
+.nav li:hover:nth-child(8n+6), .nav li.active:nth-child(8n+6){
+  border-bottom: #C49CDE 5px solid;
 }
-
-nav.navbar-findcond ul.dropdown-menu { 
-	border: 0; 
-	background: #fff; 
-	border-radius: 4px; 
-	margin: 4px 0; 
-	box-shadow: 0 0 4px 0 #ccc; 
+.nav li:hover:nth-child(8n+7), .nav li.active:nth-child(8n+7){
+  border-bottom: #669AE1 5px solid;
 }
-
-nav.navbar-findcond ul.dropdown-menu > li > a { 
-	color: #444; 
-}
-
-nav.navbar-findcond ul.dropdown-menu > li > a:hover { 
-	background: ##555555; 
-	color: #fff; 
-}
-
-nav.navbar-findcond ul.dropdown-menu > li > div { 
-	color: #444; 
-}
-
-nav.navbar-findcond ul.dropdown-menu > li > div:hover { 
-	background: ##555555; 
-	color: #fff; 
-}
-
-nav.navbar-findcond span.badge { 
-	background: ##555555; 
-	font-weight: normal; 
-	font-size: 11px; 
-	margin: 0 4px; 
-}
-
-nav.navbar-findcond span.badge.new { 
-	background: rgba(255, 0, 0, 0.8); 
-	color: #fff; 
+.nav li:hover:nth-child(8n+8), .nav li.active:nth-child(8n+8){
+  border-bottom: #62C2E4 5px solid;
 }
 
 
+.image-circle{
+    border-radius: 50%;
+    width: 175px;
+    height: 175px;
+    border: 4px solid #FFF;
+    margin: 10px;
+}
 
+.outter{
+    padding: 0px;
+    border: 1px solid rgba(255, 255, 255, 0.29);
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
 
+@media ( min-width: 768px ) {
+    .grid-divider {
+        position: relative;
+        padding: 0;
+    }
+    .grid-divider>[class*='col-'] {
+        position: static;
+    }
+    .grid-divider>[class*='col-']:nth-child(n+2):before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+    }
+    .col-padding {
+        padding: 0 15px;
+    }
+}
 
-
-
-
+#map {
+  height: 350px;
+}
