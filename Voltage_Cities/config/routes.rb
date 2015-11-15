@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   post "/sessions", to: "sessions#create"
 
   #logout route 
-  post "/logout", to: "sessions#destroy", as: "logout"
+  delete "/logout", to: "sessions#destroy", as: "logout"
 
   #destroy post
   delete '/cities/:city_id/posts/:id', to: 'posts#destroy', as: 'delete_city_post'

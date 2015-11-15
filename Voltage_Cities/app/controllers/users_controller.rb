@@ -6,11 +6,11 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
     	@posts = @user.posts 
-
-    	@current_user = current_user
-
-    	render :show
-
+    	if current_user!=nil
+    		@current_user = current_user
+    		render :show
+    	else redirect_to "/login"
+    	end
 	end
 
 	def edit
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
 		user_params = params.require(:user).permit(:username, :artist_name, :email, :password, :current_city, :avatar)
 		@user = User.create(user_params)
 		login(@user) # <-- login the user
-    	redirect_to user_path(@user) # <-- go to show
+    	redirect_to @user # <-- go to show
 	end 
 
 end

@@ -13,7 +13,8 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav pull-right">
                         <% if @current_user %>
-                        <li class=""><a href="/">LOG OUT</a></li>
+                        <li class=""><%= link_to "LOGOUT", logout_path, method: :delete%></li>
+
                         <%end%>
                     </ul>
                 </div>
@@ -32,12 +33,11 @@
                   <h1>  Welcome, <%= @user.artist_name %> </h1>
                   <h2>  USERNAME: <%= @user.username %> <br>
                         CURRENT CITY: <%= @user.current_city %> <br>
-                        JOINED: <%= @user.created_at.strftime('%b. %d, %Y') %> <br>
+                        JOINED: <%= local_time_ago(@user.created_at) %> <br>
                   <h2> 
                   <main-button><%= link_to "ADD POST", "/cities", class: "main-button" %> </main-button>
             </div>
 
- 	<% end %>
  </ul>
  <% if @user.id == @current_user.id%>
   <%=link_to 'Edit your profile', edit_user_path(@user) %>
@@ -48,34 +48,27 @@
     <br>
 
 
-    <!--<div class="page-header">     
-        <h3><ul>
-          <% if @posts.count==0 %>
-          No Posts
-          <% end %>
+<div class="page-header">     
+    <% if @posts.count==0 %>
+        No Posts
+    <% else %> 
+      <div class="row grid-divider">
           <%@posts.each do |post| %> 
-          <li> <%= post.title %></li>
+       		<div class="col-sm-4">
+	      		<div class="col-padding">
+	        		<h3><%= link_to city_post_path(post.city_id, post) do %>
+  					<%=post.title%>
+  					<% end %>
+  					</h3>
+	        		<h2>
+	        			<%= link_to city_path(post.city_id) do %>
+	        			<%=post.city.name%>
+	        			<% end %>
+	        		</h2>
+	        		<p><%=post.content%></p>
+	      		</div>
+	    	</div>
           <% end %>
-        </ul></h3>
-    </div>
-    <div class="row grid-divider">
-    <div class="col-sm-4">
-      <div class="col-padding">
-        <h3>City</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima expedita incidunt rerum.</p>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="col-padding">
-        <h3>City</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate placeat suscipit maxime tenetur officiis asperiores quae molestias fugiat praesentium dolorum.</p>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="col-padding">
-        <h3>City</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab veniam aperiam numquam cupiditate maiores repudiandae ea dicta, sunt rerum corporis. Ab veniam aperiam numquam cupiditate maiores repudiandae ea dicta, sunt rerum corporis. Ab veniam aperiam numquam cupiditate maiores repudiandae ea dicta.</p>
-      </div>-->
-    </div>
-    </div>
+    	</div>
+    	<% end %>
 </div>
