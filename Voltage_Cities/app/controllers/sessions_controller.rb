@@ -11,7 +11,12 @@ class SessionsController < ApplicationController
 			login(@user)
 			redirect_to user_path (@user)
 		else
-			redirect_to "/sign_in"
+			redirect_to "/login"
 		end
 	end
+
+	def destroy
+		logout
+		redirect_to root_path
+	end 
 end

@@ -1,4 +1,4 @@
-<%= form_for [@user,@post] do |f| %>
+<%= form_for [@city,@post] do |f| %>
   
   <h1> New Post</h1>
     <%= f.text_field :title, placeholder: "Post Title" %> 
@@ -6,3 +6,5 @@
 
 	 <%= f.submit "Add Post" %>
 <% end %>
+
+The current user is <%=@current_user%>
