@@ -50,6 +50,17 @@ width:200px;
 background-image:url(logo.gif);
 }
 
+
+/* set background image per page */
+.cities-bg {
+  background: url(cities-bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+}
+
 /* set background image per page */
 .login-bg {
 	background: url(login-bg.jpg) no-repeat center center fixed;
@@ -77,7 +88,7 @@ background-image:url(logo.gif);
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	height: auto;
+	height: 100vh;
 }
 
 
@@ -153,7 +164,7 @@ background-image:url(logo.gif);
 	line-height: 20px;
 	margin-bottom: 0px;
 	padding: 10px 20px;
-	position: relative;
+	
 	text-align: left;
 
 }
