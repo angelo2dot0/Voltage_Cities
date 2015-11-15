@@ -282,3 +282,7 @@ border: none;
         padding: 0 15px;
     }
 }
+
+#map {
+  height: 350px;
+}
