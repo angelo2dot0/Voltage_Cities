@@ -65,7 +65,8 @@
 	        			<%=post.city.name%>
 	        			<% end %>
 	        		</h2>
-	        		<p><%=post.content%></p>
+	        		<p><%=truncate post.content , length: 160%></p>
+              <%= link_to 'read more', city_post_path(post.city_id, post) %>
 	      		</div>
 	    	</div>
           <% end %>

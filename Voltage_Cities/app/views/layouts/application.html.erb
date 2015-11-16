@@ -5,12 +5,12 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <link href='http://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Dosis:400,200,300,500,600,700,800' rel='stylesheet' type='text/css'>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 	<!-- Script tags for Google Map -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&sensor=false&callback=init"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
     <script type="text/javascript">
+    
         // When the window has finished loading create our google map below
         google.maps.event.addDomListener(window, 'load', init);
     
@@ -83,6 +83,6 @@
 
 
 <%= yield %>
-
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
 </body>
 </html>

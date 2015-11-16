@@ -4,10 +4,11 @@
                         <% end %>
   
   <h1> New Post</h1>
-    <%= f.text_field :title, placeholder: "Post Title" %> 
+    <%= f.text_field :title, placeholder: "Post Title", :id => 'geocomplete' %> 
     <%= f.text_field :content, placeholder: "Post Content" %>
 
 	 <%= f.submit "Add Post" %>
 <% end %>
 
 The current user is <%=@current_user%>
+ 
