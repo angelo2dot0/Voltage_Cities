@@ -6,12 +6,14 @@ def index
 end
 
 def show
-	@logged_in = logged_in?
-	@city = City.find(params[:id])
-		@posts = @city.posts 
-		@postsR= @posts.reverse
-		render :show 
-
+	@current_user = current_user
+		if current_user!=nil
+			@city = City.find(params[:id])
+			@posts = @city.posts 
+			@postsR= @posts.reverse
+			render :show 
+	   	else redirect_to "/login"
+	    end
 end 
 
 
