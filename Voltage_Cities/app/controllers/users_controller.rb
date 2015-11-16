@@ -4,7 +4,8 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@user = User.find(params[:id])
+		User.find_each(&:save)
+		@user = User.friendly.find(params[:id])
     	@posts = @user.posts 
     	if current_user!=nil
     		@current_user = current_user
@@ -14,12 +15,12 @@ class UsersController < ApplicationController
 	end
 
 	def edit
-		@user = User.find(params[:id])
+		@user = User.friendly.find(params[:id])
 		render :edit
 	end
 
 	def update
-		@user = User.find(params[:id])
+		@user = User.friendly.find(params[:id])
 		@user.update_attributes(params.require(:user).permit(:artist_name, :current_city, :avatar))
 		redirect_to user_path(@user) 
 	end
