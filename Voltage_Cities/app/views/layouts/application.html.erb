@@ -8,6 +8,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+    <!-- Script tags for select2 tags -->
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css"></script> -->
 	<!-- Script tags for Google Map -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&sensor=false&callback=init"></script>
     <script type="text/javascript">
@@ -20,6 +22,9 @@
             var mapOptions = {
                 // How zoomed in you want the map to start at (always required)
                 zoom: 11,
+
+                // Option to disable UI on map
+                //disableDefaultUI: true,
 
                 // The latitude and longitude to center the map (always required)
                 center: new google.maps.LatLng(37.78, -122.44), // San Francisco
