@@ -29,17 +29,17 @@
      <div class="col-sm-4 col-sm-offset-4">
        <div class="well">
         <% if @user.errors.any? %>
-        <div id="error_explanation">
-          <h2 class="error-warning">
-            <%= pluralize(@user.errors.count, "error") %> prohibited
-            this owner from being saved:
-          </h2>
-          <ul>
-            <% @user.errors.full_messages.each do |msg| %>
-            <li class="error-message"><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
+          <div id="error_explanation">
+            <h2 class="error-warning">
+              <%= pluralize(@user.errors.count, "error") %> prohibited
+              this owner from being saved:
+            </h2>
+            <ul>
+              <% @user.errors.full_messages.each do |msg| %>
+              <li class="error-message"><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
         <% end %>
         <%= f.text_field :username, class: "form-control", id: "reg_username", placeholder: "User Name" %>
         <br>
