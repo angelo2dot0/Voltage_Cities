@@ -4,7 +4,8 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@user = User.find(params[:id])
+		User.find_each(&:save)
+		@user = User.friendly.find(params[:id])
     	@posts = @user.posts 
     	@postsR=@posts.reverse
     	if current_user!=nil
@@ -15,12 +16,12 @@ class UsersController < ApplicationController
 	end
 
 	def edit
-		@user = User.find(params[:id])
+		@user = User.friendly.find(params[:id])
 		render :edit
 	end
 
 	def update
-		@user = User.find(params[:id])
+		@user = User.friendly.find(params[:id])
 		@user.update_attributes(params.require(:user).permit(:artist_name, :current_city, :avatar))
 		redirect_to user_path(@user) 
 	end
@@ -32,9 +33,14 @@ class UsersController < ApplicationController
 
 	def create
 		user_params = params.require(:user).permit(:username, :artist_name, :email, :password, :current_city, :avatar)
-		@user = User.create(user_params)
-		login(@user) # <-- login the user
-    	redirect_to @user # <-- go to show
+		@user = User.new(user_params)
+		if @user.save
+			login(@user) # <-- login the user
+    		redirect_to @user # <-- go to show
+    	else 
+    		render :new
+		end
+		
 	end 
 
 end

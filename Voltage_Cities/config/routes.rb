@@ -24,6 +24,9 @@ Rails.application.routes.draw do
   #destroy post
   delete '/cities/:city_id/posts/:id', to: 'posts#destroy', as: 'delete_city_post'
 
+  #tags route 
+  get 'tags/:tag', to: 'articles#index', as: :tag
+
   # #profile
   #get "/users/:id", to: "users#show", as: "user"
 
