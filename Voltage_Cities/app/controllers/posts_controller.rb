@@ -19,7 +19,7 @@ class PostsController < ApplicationController
 	def create
 		@current_user = current_user
 		@city = City.find(params[:city_id])
-		post_params = params.require(:post).permit(:title, :content)
+		post_params = params.require(:post).permit(:title, :content, :tag_list)
 		@post = Post.new(post_params)
 		if @post.save
       	   @current_user.posts << @post
@@ -41,7 +41,7 @@ class PostsController < ApplicationController
 	end
 
 	def destroy
-		post = Post.find(params[:id])
+		post = Post.find(params[:id])	
 		post.destroy
 		@city = City.find(params[:city_id])
 		redirect_to @city
