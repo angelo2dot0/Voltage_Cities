@@ -1,23 +1,74 @@
-<div>
-  Welcome, <%= @user.artist_name %> 
-  <%= @user.username %> 
-  <%= @user.current_city %> 
-  Joined <%= @user.created_at.strftime('%b. %d, %Y') %>
-  <br>
-  <%= image_tag @user.avatar.url(:thumb) %>
+<div class="navbar-wrapper">
+    <div class="container-fluid">
+        <nav class="navbar navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">VOLTAGE CITIES</a>
+                </div>
+                
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav pull-right">
+                        <% if @current_user %>
+                        <li class=""><%= link_to "LOGOUT", logout_path, method: :delete%></li>
 
- <ul>
- 	<% if @posts.count==0 %>
- 		no posts 
- 	<% end %>
- 	<%@posts.each do |post| %> 
- 	<li> <%= post.title %></li>
+                        <%end%>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
 
- 	<% end %>
+<div class="profile-bg">
+    <div class="text-center" style="padding:120px 0">
+      <div class="container">
+            <div class="col-md-12 col-xs-12" align="center">
+
+
+                  <div class="outter"><%= image_tag @user.avatar.url(:thumb), :class => 'image-circle'%></div>  
+                  <h1>  Welcome, <%= @user.artist_name %> </h1>
+                  <h2>  USERNAME: <%= @user.username %> <br>
+                        CURRENT CITY: <%= @user.current_city %> <br>
+                        JOINED: <%= local_time_ago(@user.created_at) %> <br>
+                  <h2> 
+                  <main-button><%= link_to "ADD POST", "/cities", class: "main-button" %> </main-button>
+            </div>
+
  </ul>
  <% if @user.id == @current_user.id%>
   <%=link_to 'Edit your profile', edit_user_path(@user) %>
  <%end%>
 
- 
+
+    <br>
+    <br>
+
+
+<div class="page-header">     
+    <% if @posts.count==0 %>
+        No Posts
+    <% else %> 
+      <div class="row grid-divider">
+          <%@posts.each do |post| %> 
+       		<div class="col-sm-4">
+	      		<div class="col-padding">
+	        		<h3><%= link_to city_post_path(post.city_id, post) do %>
+  					<%=post.title%>
+  					<% end %>
+  					</h3>
+	        		<h2>
+	        			<%= link_to city_path(post.city_id) do %>
+	        			<%=post.city.name%>
+	        			<% end %>
+	        		</h2>
+	        		<p><%=post.content%></p>
+	      		</div>
+	    	</div>
+          <% end %>
+    	</div>
+    	<% end %>
 </div>
