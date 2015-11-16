@@ -5,12 +5,12 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <link href='http://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Dosis:400,200,300,500,600,700,800' rel='stylesheet' type='text/css'>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 	<!-- Script tags for Google Map -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&sensor=false&callback=init"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
     <script type="text/javascript">
+    
         // When the window has finished loading create our google map below
         google.maps.event.addDomListener(window, 'load', init);
     
@@ -36,29 +36,45 @@
             // Create the Google Map using our element and options defined above
             var map = new google.maps.Map(mapElement, mapOptions);
 
-            // Let's add a marker while we're at it
-            var marker = new google.maps.Marker({
+            // Let's add a marker for San Francisco:
+            var marker1 = new google.maps.Marker({
                 position: new google.maps.LatLng(37.78, -122.44),
                 map: map,
                 title: 'Snazzy!'
             });
-            // Let's also add a marker while we're at it
-            var marker = new google.maps.Marker({
+            // Adds link to maker
+            google.maps.event.addListener(marker1, 'click', function() { 
+              window.location = "/cities/san-francisco";
+            });
+            // Let's also add a marker for New York:
+            var marker2 = new google.maps.Marker({
                 position: new google.maps.LatLng(40.7127, -74.0059),
                 map: map,
                 title: 'Snazzy!'
             });
-            // Let's also add a marker while we're at it
-            var marker = new google.maps.Marker({
+            // Adds link to maker
+            google.maps.event.addListener(marker2, 'click', function() { 
+              window.location = "/cities/new-york";
+            });
+            // Let's also add a marker for Gibraltar:
+            var marker3 = new google.maps.Marker({
+                position: new google.maps.LatLng(36.134477, -5.350000),
+                map: map,
+                title: 'Snazzy!'
+            });
+            // Adds link to maker
+            google.maps.event.addListener(marker3, 'click', function() { 
+              window.location = "cities/london";
+            });
+            // Let's also add a marker for London:
+            var marker4 = new google.maps.Marker({
                 position: new google.maps.LatLng(51.507409, -0.127489),
                 map: map,
                 title: 'Snazzy!'
             });
-            // Let's also add a marker while we're at it
-            var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(36.134477, -5.350000),
-                map: map,
-                title: 'Snazzy!'
+            // Adds link to maker
+            google.maps.event.addListener(marker4, 'click', function() { 
+              window.location = "/cities/gibraltar";
             });
         }
     </script>
@@ -67,6 +83,6 @@
 
 
 <%= yield %>
-
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
 </body>
 </html>

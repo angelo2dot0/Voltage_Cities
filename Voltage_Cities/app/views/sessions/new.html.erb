@@ -25,12 +25,15 @@
 	<div class="text-center" style="padding:60px 0">
 	<%= form_for @user, url: "/sessions", method: "post" do |f| %>
 
-	<div class="logo">LOG IN</div> 
+	<h1>LOG IN</h1> 
 
 		<div class="login-background" id="login"></div>
 			<div class="container">
 				<div class="col-sm-4 col-sm-offset-4">
 					<div class="well">
+                        <% flash.each do |key, value| %>
+                        <div class="alert alert-<%= key %>"><%= value %></div>
+                        <% end %>
 						<%= f.text_field :email, class: "form-control", id: "reg_email", placeholder: "Email" %>
 						<br>
 						<%= f.password_field :password, class: "form-control", id: "reg_password", placeholder: "Password" %>
