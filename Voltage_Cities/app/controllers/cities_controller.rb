@@ -1,6 +1,7 @@
 class CitiesController < ApplicationController
 
 def index
+	City.find_each(&:save)
 	@cities = City.all
 	render :index
 end
@@ -8,7 +9,7 @@ end
 def show
 	@current_user = current_user
 		if current_user!=nil
-			@city = City.find(params[:id])
+			@city = City.friendly.find(params[:id])
 			@posts = @city.posts 
 			@postsR= @posts.reverse
 			render :show 
