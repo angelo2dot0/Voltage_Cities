@@ -11,7 +11,13 @@ class SessionsController < ApplicationController
 			login(@user)
 			redirect_to user_path (@user)
 		else
+			flash[:error] = "Username or Password doesn't match, try again"
 			redirect_to "/login"
 		end
 	end
+
+	def destroy
+		logout
+		redirect_to root_path
+	end 
 end
