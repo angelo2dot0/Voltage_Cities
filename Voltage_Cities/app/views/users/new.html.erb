@@ -1,54 +1,63 @@
 <div class="navbar-wrapper">
-    <div class="container-fluid">
-        <nav class="navbar navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="/">VOLTAGE CITIES</a>
-                </div>
-                
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav pull-right">
-                        <li class=""><a href="/login">LOG IN</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
+  <div class="container-fluid">
+    <nav class="navbar navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">VOLTAGE CITIES</a>
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav pull-right">
+            <li class=""><a href="/login">LOG IN</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
 </div>
 
 <div class="signup-bg">
   <div class="text-center" style="padding:100px 0">
-  <%= form_for @user, :html =>{ :multipart => true } do |f| %>
- 
-
+    <%= form_for @user, :html =>{ :multipart => true } do |f| %>
     <div class="logo">SIGN UP</div> 
-    
-  
-      <div class="signup-background" id="signup"></div>
-       <div class="container">
-           <div class="col-sm-4 col-sm-offset-4">
-               <div class="well">
-                      <%= f.text_field :username, class: "form-control", id: "reg_username", placeholder: "User Name" %>
-                      <br>
-                      <%= f.text_field :artist_name, class: "form-control", id: "reg_artist_name",  placeholder: "Artist Name" %>
-                      <br>
-                      <%= f.text_field :current_city, class: "form-control", id: "reg_current_city", placeholder: "Current City" %>
-                      <br>
-                      <%= f.text_field :email, class: "form-control", id: "reg_email", placeholder: "Email" %>
-                      <br>
-                      <%= f.password_field :password, class: "form-control", id: "reg_password", placeholder: "Password" %>
-                      <br>
-                    <%= f.file_field :avatar %>    
-                  <%= f.submit "CLICK!", class: "login-button" %>
-                </div>
-            </div>
+    <div class="signup-background" id="signup"></div>
+    <div class="container">
+     <div class="col-sm-4 col-sm-offset-4">
+       <div class="well">
+        <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h2 class="error-warning">
+            <%= pluralize(@user.errors.count, "error") %> prohibited
+            this owner from being saved:
+          </h2>
+          <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+            <li class="error-message"><%= msg %></li>
+            <% end %>
+          </ul>
         </div>
-  <% end %> 
+        <% end %>
+        <%= f.text_field :username, class: "form-control", id: "reg_username", placeholder: "User Name" %>
+        <br>
+        <%= f.text_field :artist_name, class: "form-control", id: "reg_artist_name",  placeholder: "Artist Name" %>
+        <br>
+        <%= f.text_field :current_city, class: "form-control", id: "reg_current_city", placeholder: "Current City" %>
+        <br>
+        <%= f.text_field :email, class: "form-control", id: "reg_email", placeholder: "Email" %>
+        <br>
+        <%= f.password_field :password, class: "form-control", id: "reg_password", placeholder: "Password" %>
+        <br>
+        <%= f.file_field :avatar %>    
+        <%= f.submit "CLICK!", class: "login-button" %>
+      </div>
+    </div>
   </div>
+  <% end %> 
+</div>
 </div>
 
 

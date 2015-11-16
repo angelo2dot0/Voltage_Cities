@@ -1,4 +1,7 @@
 <%= form_for [@city,@post] do |f| %>
+<% flash.each do |key, value| %>
+                        <div class="alert alert-<%= key %>"><%= value %></div>
+                        <% end %>
   
   <h1> New Post</h1>
     <%= f.text_field :title, placeholder: "Post Title" %> 
