@@ -36,29 +36,45 @@
             // Create the Google Map using our element and options defined above
             var map = new google.maps.Map(mapElement, mapOptions);
 
-            // Let's add a marker while we're at it
-            var marker = new google.maps.Marker({
+            // Let's add a marker for San Francisco:
+            var marker1 = new google.maps.Marker({
                 position: new google.maps.LatLng(37.78, -122.44),
                 map: map,
                 title: 'Snazzy!'
             });
-            // Let's also add a marker while we're at it
-            var marker = new google.maps.Marker({
+            // Adds link to maker
+            google.maps.event.addListener(marker1, 'click', function() { 
+              window.location = "http://localhost:3000/cities/1";
+            });
+            // Let's also add a marker for New York:
+            var marker2 = new google.maps.Marker({
                 position: new google.maps.LatLng(40.7127, -74.0059),
                 map: map,
                 title: 'Snazzy!'
             });
-            // Let's also add a marker while we're at it
-            var marker = new google.maps.Marker({
+            // Adds link to maker
+            google.maps.event.addListener(marker2, 'click', function() { 
+              window.location = "http://localhost:3000/cities/2";
+            });
+            // Let's also add a marker for Gibraltar:
+            var marker3 = new google.maps.Marker({
+                position: new google.maps.LatLng(36.134477, -5.350000),
+                map: map,
+                title: 'Snazzy!'
+            });
+            // Adds link to maker
+            google.maps.event.addListener(marker3, 'click', function() { 
+              window.location = "http://localhost:3000/cities/3";
+            });
+            // Let's also add a marker for London:
+            var marker4 = new google.maps.Marker({
                 position: new google.maps.LatLng(51.507409, -0.127489),
                 map: map,
                 title: 'Snazzy!'
             });
-            // Let's also add a marker while we're at it
-            var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(36.134477, -5.350000),
-                map: map,
-                title: 'Snazzy!'
+            // Adds link to maker
+            google.maps.event.addListener(marker4, 'click', function() { 
+              window.location = "http://localhost:3000/cities/4";
             });
         }
     </script>
