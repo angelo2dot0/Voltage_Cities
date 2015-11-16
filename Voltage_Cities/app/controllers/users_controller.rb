@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
     	@posts = @user.posts 
+    	@postsR=@posts.reverse
     	if current_user!=nil
     		@current_user = current_user
     		render :show
