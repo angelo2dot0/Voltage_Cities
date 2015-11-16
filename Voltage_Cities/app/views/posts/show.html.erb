@@ -6,6 +6,8 @@ Name <%= @user.username %>
 <%=@post.title%>
 <br>
 <%=@post.content%>
+<br>
+<%=raw tag_links@post.tag_list%>
 
 <% if @user.id == @current_user.id%>
   <%=link_to 'Edit your Post', edit_city_post_path(@city, @post) %>

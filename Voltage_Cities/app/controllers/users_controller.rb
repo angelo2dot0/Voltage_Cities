@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 		User.find_each(&:save)
 		@user = User.friendly.find(params[:id])
     	@posts = @user.posts 
+    	@postsR= @posts.reverse
     	if current_user!=nil
     		@current_user = current_user
     		render :show

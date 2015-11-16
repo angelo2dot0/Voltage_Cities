@@ -53,7 +53,7 @@
         No Posts
     <% else %> 
       <div class="row grid-divider">
-          <%@posts.each do |post| %> 
+          <%@postsR.each do |post| %> 
        		<div class="col-sm-4">
 	      		<div class="col-padding">
 	        		<h3><%= link_to city_post_path(post.city_id, post) do %>
