@@ -1,27 +1,60 @@
+<div class="navbar-wrapper">
+  <div class="container-fluid">
+    <nav class="navbar navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">VOLTAGE CITIES</a>
 
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class=" dropdown"><a href="/sessions" class="dropdown-toggle "  role="button" aria-haspopup="true" aria-expanded="false">PROFILE </a>
+            </li>
+          </ul>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav pull-right">
+              <li class=""><a href="/">LOG OUT</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="cities-bg">
+      <div class="text-center" style="padding:60px 0">
+        <div id="map"></div>
+        <br>
 
-
-
-<% if @city.name=="San Francisco" %>	
-	<header styles = "background: url ('san_francisco 2.jpeg') no-repeat center center scroll">
-
-	</header>
-
-	<% end %>
-
-<div>
-  <%= @city.name %> 
-  <%@postsR.each do |post| %>
-    Name <%= post.user.username %>
-  	<%= link_to city_post_path(@city, post) do %>
-  	<%=post.title%>
-  	<% end %>
- <br> 
-  <%=post.content%> 
- <br>
-  <% end %> 
-</div>
-
-<div>
-	<%= link_to "Add Post", new_city_post_path(@city) %>
-</div>
+        <div class="page-header">  
+          <%= @city.name %>    
+          <% if @posts.count==0 %>
+          No Posts
+          <% else %> 
+          <%=@posts.count%> Posts
+          <div class="row grid-divider">
+            <%@postsR.each do |post| %> 
+            <div class="col-sm-4">
+              <div class="col-padding">
+                <h3><%= link_to user_path(post.user) do %>
+                  <%=post.user.username%>
+                  <% end %>
+                </h3>
+                <h2><%= link_to city_post_path(@city, post) do %>
+                  <%=post.title%>
+                  <% end %>
+                </h2>
+                <p><%=post.content%></p>
+              </div>
+            </div>
+            <% end %>
+          </div>
+          <% end %>
+        </div>
+        <div>
+         <%= link_to "Add Post", new_city_post_path(@city) %>
+       </div>
