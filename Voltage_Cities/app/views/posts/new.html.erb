@@ -9,7 +9,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">VOLTAGE CITIES</a>
+          <a class="navbar-brand" href="/cities">VOLTAGE CITIES</a>
         </div>
         
         <div id="navbar" class="navbar-collapse collapse">
@@ -43,7 +43,8 @@
                         <% end %>
 
 
-            <%= f.text_field :title, class: "form-control", placeholder: "Title", :id => 'geocomplete' %> 
+            <%= f.text_field :title, class: "form-control" %> 
+            <%= f.text_field :location, class: "form-control", placeholder: "Location", :id => 'geocomplete' %> 
     		<%= f.text_field :content, class: "form-control", placeholder: "Content" %>
 			<%= f.text_field :tag_list, class: "form-control", placeholder: "Tags" %>
 
@@ -57,7 +58,9 @@
   </div>
 </div>
 
-
+<script type="text/javascript">
+	geo()
+</script>
 
 
  
