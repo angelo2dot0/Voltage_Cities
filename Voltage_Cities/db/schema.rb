@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20151116071738) do
   create_table "cities", force: :cascade do |t|
     t.string   "name"
     t.string   "country"
+    t.string   "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -51,6 +52,7 @@ ActiveRecord::Schema.define(version: 20151116071738) do
     t.string   "email"
     t.string   "password_digest"
     t.string   "current_city"
+    t.string   "slug"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.string   "avatar_file_name"

@@ -32,9 +32,14 @@ class UsersController < ApplicationController
 
 	def create
 		user_params = params.require(:user).permit(:username, :artist_name, :email, :password, :current_city, :avatar)
-		@user = User.create(user_params)
-		login(@user) # <-- login the user
-    	redirect_to @user # <-- go to show
+		@user = User.new(user_params)
+		if @user.save
+			login(@user) # <-- login the user
+    		redirect_to @user # <-- go to show
+    	else 
+    		redirect_to new_user_path
+		end
+		
 	end 
 
 end

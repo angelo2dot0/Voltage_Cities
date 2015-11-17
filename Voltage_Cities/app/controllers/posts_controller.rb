@@ -20,16 +20,16 @@ class PostsController < ApplicationController
 		@current_user = current_user
 		@city = City.friendly.find(params[:city_id])
 		post_params = params.require(:post).permit(:title, :content)
-		if params[:title] =='' || params[:content]== ''
-			redirect_to new_city_post_path
-		else
-			@post = Post.new(post_params)
+		@post = Post.new(post_params)
 			if @post.save
 	      	   @current_user.posts << @post
 	      	   @city.posts << @post
 	      		redirect_to @city
+	      	else
+	      		flash[:error] = 'Title or content must not be empty'
+	      		redirect_to new_city_post_path
 	      	end
-		end
+		
 		
 	end 
 
@@ -41,8 +41,14 @@ class PostsController < ApplicationController
 
 	def update
 		@post = Post.find(params[:id])
-		@post.update_attributes(params.require(:post).permit(:title, :content))
-		redirect_to city_post_path(@post)
+		@city = City.friendly.find(params[:city_id])
+		if @post.update_attributes(params.require(:post).permit(:title, :content))
+			redirect_to city_post_path(@city,@post)
+		else
+			flash[:error] = 'Title or content must not be empty'
+			redirect_to edit_city_post_path
+
+		end
 	end
 
 	def destroy
