@@ -4,10 +4,11 @@ body {
   font-size: 12px;
 }
 
+
 h1 {
   font-family: 'Raleway', sans-serif;
   color: white;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -17,16 +18,26 @@ h1 {
 h2 {
   font-family: 'Raleway', sans-serif;
   color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 150%;
+}
+
+h3 {
+  font-family: 'Raleway', sans-serif;
+  color: white;
   font-size: 14px;
   font-weight: normal;
   letter-spacing: 0px;
   line-height: 150%;
 }
 
-h3 {
+h4 {
   position: center;
   font-family: 'Raleway', sans-serif;
-  color: white;
+  color: #999999;
   font-size: 14px;
   font-weight: normal;
   margin-top: 3px;
@@ -34,6 +45,17 @@ h3 {
   letter-spacing: 0px;
   line-height: 150%;
   text-transform: uppercase;
+}
+
+h5 {
+   position: center;
+  font-family: 'Raleway', sans-serif;
+  color: #999999;
+  font-size: 12px;
+  font-weight: normal;
+  letter-spacing: 0px;
+  line-height: 150%;
+
 }
 
 p {
@@ -46,16 +68,6 @@ p {
   line-height: 150%;
 }
 
-h4 {
-   position: center;
-  font-family: 'Raleway', sans-serif;
-  color: #999999;
-  font-size: 12px;
-  font-weight: normal;
-  letter-spacing: 0px;
-  line-height: 150%;
-
-}
 
 a {
       padding-top: 10px;
@@ -125,6 +137,26 @@ background-image:url(logo.gif);
 /* set background image per page */
 .profile-bg {
   background: url(profile-bg.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+}
+
+/* set background image per page */
+.editprofile-bg {
+  background: url(editprofile-bg.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+}
+
+/* set background image per page */
+.post-bg {
+  background: url(post-bg.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -243,7 +275,7 @@ background-image:url(logo.gif);
 	 line-height: none;
 }
 
-.extra-button {
+.button {
   font-family: 'Raleway', sans-serif;
   font-family: 'Raleway', sans-serif;
   background: none;
@@ -254,15 +286,6 @@ background-image:url(logo.gif);
  border: 3px #999999;   
 }
 
-.edit-button:hover {
- color: white;
-  -webkit-animation:spin 1s linear infinite;
-  -moz-animation:spin 1s linear infinite;
-  animation:spin 1s linear infinite;
-  }
-  @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-  @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-  @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 
 

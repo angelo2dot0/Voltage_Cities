@@ -1,14 +1,52 @@
+<div class="navbar-wrapper">
+  <div class="container-fluid">
+    <nav class="navbar navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">VOLTAGE CITIES</a>
+        </div>
+        
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class=" dropdown"><%= link_to 'PROFILE', user_path(@current_user) %>
+            </li>
+          </ul>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav pull-right">
+              <% if @current_user %>
+              <li class=""><%= link_to "LOGOUT", logout_path, method: :delete%></li>
+            </ul>
+            <%end%>
+          </div>
+        </nav>
+      </div>
+    </div>
 
-Name <%= @user.username %>
-<%=image_tag @user.avatar.url(:thumb) %>
-<br>
+<section class="block-parallax-1">
+  <div class="profile-bg">
+    <div class="col-md-12 col-xs-12" align="center">
+      <div class="center-block">
+        <div class="outter"><%= image_tag @user.avatar.url(:thumb), :class => 'image-circle'%></div>  
+        <h1>  <%= @user.artist_name %> </h1>
+        <h3>  <%=@post.title%> <br>
+          <%=@post.content%> <br>
+          <%=raw tag_links@post.tag_list%> <br>
+        </h3> 
 
-<%=@post.title%>
-<br>
-<%=@post.content%>
+        <main-button><% if @user.id == @current_user.id%>
+        <%=link_to 'EDIT POST', edit_city_post_path(@city, @post), class: "main-button" %>
+        <%=link_to'DELETE POST', delete_city_post_path(@city, @post), method: :delete, data:{confirm: "#{@user.username} are you sure you to delete this post?" },class: "main-button" %>
+        <%end%>
+      </main-button>
+    </div>
+  </div>
+</div>
+</section>
 
-<% if @user.id == @current_user.id%>
-  <%=link_to 'Edit your Post', edit_city_post_path(@city, @post) %>
-  <%=link_to'Delete your Post', delete_city_post_path(@city, @post), method: :delete, data:{confirm: "#{@user.username} are you sure you to delete this post?" } %>
- <%end%>
 
