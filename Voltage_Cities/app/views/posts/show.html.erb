@@ -38,7 +38,13 @@
           <%=@post.content%> <br>
           <%=raw tag_links@post.tag_list%> <br>
         </h3> 
-
+        <div>
+          <%@post.comments.each do |comment| %>
+          <h1><%= comment.user.username%></h1>
+          <h3><%= comment.content%></h3>
+          <%end%>
+        </div>
+        <%=link_to 'COMMENT POST', new_city_post_comment_path(@city, @post), class: "main-button" %>
         <main-button><% if @user.id == @current_user.id%>
         <%=link_to 'EDIT POST', edit_city_post_path(@city, @post), class: "main-button" %>
         <%=link_to'DELETE POST', delete_city_post_path(@city, @post), method: :delete, data:{confirm: "#{@user.username} are you sure you to delete this post?" },class: "main-button" %>

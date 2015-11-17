@@ -11,6 +11,7 @@ class PostsController < ApplicationController
 		@city = City.friendly.find(params[:city_id])
 		#@user = User.find(params[:user_id])
 		@post = Post.find(params[:id])
+		@comments= @post.comments
 		user_id = @post.user_id
 		@user = User.friendly.find(user_id)
 		@current_user = current_user
@@ -27,7 +28,7 @@ class PostsController < ApplicationController
 	def create
 		@current_user = current_user
 		@city = City.friendly.find(params[:city_id])
-		post_params = params.require(:post).permit(:title, :content, :tag_list)
+		post_params = params.require(:post).permit(:title, :location, :content, :tag_list)
 
 		@post = Post.new(post_params)
 			if @post.save
@@ -51,7 +52,7 @@ class PostsController < ApplicationController
 	def update
 		@post = Post.find(params[:id])
 		@city = City.friendly.find(params[:city_id])
-		if @post.update_attributes(params.require(:post).permit(:title, :content, :tag_list))
+		if @post.update_attributes(params.require(:post).permit(:title, :location, :content, :tag_list))
 			redirect_to city_post_path(@city,@post)
 		else
 			flash[:error] = 'Title or content must not be empty'
