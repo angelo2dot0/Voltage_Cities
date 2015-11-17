@@ -37,7 +37,7 @@ h3 {
 h4 {
   position: center;
   font-family: 'Raleway', sans-serif;
-  color: white;
+  color: #999999;
   font-size: 14px;
   font-weight: normal;
   margin-top: 3px;
@@ -147,6 +147,16 @@ background-image:url(logo.gif);
 /* set background image per page */
 .editprofile-bg {
   background: url(editprofile-bg.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+}
+
+/* set background image per page */
+.post-bg {
+  background: url(post-bg.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

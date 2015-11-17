@@ -1,17 +1,63 @@
-<%= form_for [@city,@post] do |f| %>
-<% flash.each do |key, value| %>
+<div class="navbar-wrapper">
+  <div class="container-fluid">
+    <nav class="navbar navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">VOLTAGE CITIES</a>
+        </div>
+        
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class=" dropdown"><%= link_to 'PROFILE', user_path(@current_user) %>
+            </li>
+          </ul>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav pull-right">
+              <% if @current_user %>
+              <li class=""><%= link_to "LOGOUT", logout_path, method: :delete%></li>
+            </ul>
+            <%end%>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+<div class="post-bg">
+  <div class="text-center" style="padding:90px 0">
+   <%= form_for [@city,@post] do |f| %>
+    
+    <h1>NEW POST</h1> 
+    
+    <div class="post-background" id="post"></div>
+    <div class="container">
+     <div class="col-sm-4 col-sm-offset-4">
+       <div class="well">
+  			<% flash.each do |key, value| %>
                         <div class="alert alert-<%= key %>"><%= value %></div>
                         <% end %>
-  
-  <h1> New Post</h1>
-    <%= f.text_field :title, placeholder: "Post Title", :id => 'geocomplete' %> 
-    <%= f.text_field :content, placeholder: "Post Content" %>
-	<%= f.text_field :tag_list, placeholder: "Tags" %>
 
-	<%= f.submit "Add Post" %>
-	
 
-<% end %>
+            <%= f.text_field :title, class: "form-control", placeholder: "Title", :id => 'geocomplete' %> 
+    		<%= f.text_field :content, class: "form-control", placeholder: "Content" %>
+			<%= f.text_field :tag_list, class: "form-control", placeholder: "Tags" %>
 
-The current user is <%=@current_user%>
+	<%= f.submit "ADD!", class: "login-button" %>
+        
+
+      </div>
+    </div>
+  </div>
+  <% end %>
+  </div>
+</div>
+
+
+
+
  
