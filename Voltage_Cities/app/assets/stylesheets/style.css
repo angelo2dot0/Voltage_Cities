@@ -1,6 +1,6 @@
 body {
   font-family: 'Raleway', sans-serif;
-  line-height: 1.42857143;
+  
   font-size: 12px;
 }
 
@@ -79,6 +79,16 @@ p {
 }
 
 
+h5 {
+  text-align: left 
+}
+
+h6 {
+  font-size: 50px;
+  color: white;
+}
+
+
 a {
       padding-top: 10px;
       color: black;
@@ -88,7 +98,7 @@ a {
 
 .center-block {
   position: center;
-  padding-top: 80px;
+  padding-top: 0px;
 }
 
 #logo{
@@ -97,40 +107,39 @@ width:200px;
 background-image:url(logo.gif);
 }
 
-
+.container-bottom {
+  background-repeat: repeat-y;
+  min-height: 800px; 
+}
 /* set background image per page */
 .cities-bg {
-  background-attachment:fixed;
-  background: url(cities-bg.jpg) no-repeat center center;
+  background: url(cities-bg.jpg);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-repeat: repeat;
+}
 
+/* set background image per page */
+.signup-bg {
+  background: url(signup-bg.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 /* set background image per page */
 .login-bg {
   background-attachment:fixed;
-  background: url(login-bg.jpg) no-repeat center center fixed;
+  background: url(login-bg.jpg) ;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   height: 100vh;
 }
-
-/* set background image per page */
-.signup-bg {
-  background-attachment:fixed;
-  background: url(signup-bg.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  height: 100vh;
-}
-
 
 /* set background image per page */
 .welcome-bg {
@@ -146,17 +155,29 @@ background-image:url(logo.gif);
 
 /* set background image per page */
 .profile-bg {
+  background-attachment:fixed;
   background: url(profile-bg.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 100vh;
+  height: 85vh;
 }
 
 /* set background image per page */
-.editprofile-bg {
-  background: url(editprofile-bg.jpg) no-repeat center center;
+.profile2-bg {
+  background: url(profile2-bg.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: repeat;
+}
+
+/* set background image per page */
+.profileedit-bg {
+  background-attachment:fixed;
+  background: url(profileedit-bg.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -166,12 +187,12 @@ background-image:url(logo.gif);
 
 /* set background image per page */
 .post-bg {
-  background: url(post-bg.jpg) no-repeat center center;
+  background: url(post-bg.jpg);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 100vh;
+  background-repeat:repeat;
 }
 
 
@@ -231,6 +252,15 @@ background-image:url(logo.gif);
       max-height: 400px;
       max-width: 300px;
       margin-bottom: 30px;
+    }
+    .white-box-1 {
+      background: white;
+      max-height: 400px;
+      max-width: 300px;
+      margin-bottom: 30px;
+      margin-top: 30px;
+      margin-left:30px;
+      margin-right:30px;
     }
 }
 
@@ -340,11 +370,13 @@ background-image:url(logo.gif);
 
 .color-box {
   background: blue;
-      min-width: 400px;
-      max-width: 400px;
-      min-height: 400px;
-      max-height: 400px;     
-     
+      min-width: 450px;
+      max-width: 450px;
+      min-height: 450px;
+      
+      padding-top: 0px;
+      padding-right: 40px;
+      padding-left: 40px;
       margin-bottom: 30px;
     }
 }
@@ -363,7 +395,7 @@ background-image:url(logo.gif);
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	height: 90vh;
+	height: auto;
 	width: 100%;
 
 }
@@ -398,11 +430,10 @@ border: none;
 
 #map {
   height: 350px;
-dth: 100%;
+
 }
 
 .map {
-  
   height: 350px;
 
 }

@@ -27,13 +27,16 @@
   <div class="profile-bg">
     <div class="col-md-12 col-xs-12" align="center">
       <div class="center-block">
+      <br>
+      <br>
+      <br>
+      <br>
         <div class="outter"><%= image_tag @user.avatar.url(:thumb), :class => 'image-circle'%></div>  
         <h1>  Welcome, <%= @user.artist_name %> </h1>
         <h3>  USERNAME: <%= @user.username %> <br>
           CURRENT CITY: <%= @user.current_city %> <br>
           JOINED: <%= local_time_ago(@user.created_at) %> <br>
         </h3> 
-        <br>
         <br>
         <main-button><% if @user.id == @current_user.id%>
         <%=link_to 'EDIT PROFILE', edit_user_path(@user), class: "main-button" %>
@@ -46,53 +49,16 @@
 
 
 <section class="block-parallax-1  block-parallax-2">
-
-    <section style="min-height:400px;">
-      <div class="md-box">
-             <div class="container">
+          <section style="min-height:400px;">
+                <div class="profile2-bg" repeat>
+           <div class="container-bottom">
              <br>
              <br>
-          <main-button><%= link_to "ADD POST", "/cities", 'data-no-turbolink' => true, class: "main-button" %> </main-button>
-          </div>
-            <br>
-         <div class="container">
-            <h3><% if @posts.count==0 %>
-            No Posts
-            <% else %> 
-            <%=@posts.count%> Posts</h3>
-          
-                <div class="row grid-divider">
-                <%@postsR.each do |post| %> 
-
-                    <div class="col-sm-4">
-                        
-                            <div class="col-padding white-box">
-                               
-                                <a><%= link_to city_post_path(post.city_id, post) do %>
-                                <%=post.title%>
-                                <% end %>
-                                </a>
-                            <br>
-                                <a>
-                                <%= link_to city_path(post.city_id) do %>
-                                <%=post.city.name%>
-                                <% end %>
-                                </a>
-                            <h4><%= truncate post.content, length: 60%><br>
-                            <%= link_to "READ MORE", city_post_path(post.city_id, post) %>
-
-                            </h4>
-                            <br>
-                                    <main-button><% if @user.id == @current_user.id%>
-                                    <%= link_to 'EDIT', edit_city_post_path(post.city, post), class: "extra-button" %> </main-button>
-                                    <% end %>
-                            </div>
-                        </div>
-                    <% end %>
-                    </div>
-                <% end %>
-                </div>
-      </div>
-    </section>
-</section>
-
+             <br>
+             <br>
+             <br>
+             <br>
+             </div>
+             </div>
+             </section>
+             </section>

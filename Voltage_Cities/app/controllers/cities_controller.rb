@@ -1,6 +1,7 @@
 class CitiesController < ApplicationController
 
 def index
+	@current_user = current_user
 	City.find_each(&:save)
 	@cities = City.all
 	render :index

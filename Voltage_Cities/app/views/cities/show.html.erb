@@ -28,16 +28,15 @@
       </div>
     </div>
 
-    <div class="cities-bg">
+
       <div class="text-center" style="padding:50px 0">
         <div class="map" id="map<%=@city.slug%>"></div>
 
 
         <section class="block-parallax-1  block-parallax-2">
-
           <section style="min-height:400px;">
-            
-           <div class="container">
+                <div class="cities-bg" repeat>
+           <div class="container-bottom">
              <br>
              <br>
              <br>
@@ -54,7 +53,7 @@
                 <%@postsR.each do |post| %> 
 
                 <div class="col-sm-4">
-                  <!-- <div class="white-box"> -->
+  
                   <div class="col-padding white-box">
                    
                    <a><%= link_to user_path(post.user_id, post) do %>
@@ -71,10 +70,8 @@
                    <h5><%=post.city.name%></h5>
                    <% end %>
                  </a>
-
-                 <br>
                  
-                 <h5><%= truncate post.content, length: 20    %>
+                 <h5><%= truncate post.content, length: 90    %>
 
                   <br>
                   <br>

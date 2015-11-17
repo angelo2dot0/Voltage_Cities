@@ -5,6 +5,8 @@ class PostsController < ApplicationController
 		else
 			@posts = Post.all
 		end 
+		@postsR= @posts.reverse
+		render :index 
 	end
 
 	def show
