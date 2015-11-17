@@ -22,7 +22,7 @@
 
 
 <div class="login-bg">
-	<div class="text-center" style="padding:60px 0">
+	<div class="text-center" style="padding:90px 0">
 	<%= form_for @user, url: "/sessions", method: "post" do |f| %>
 
 	<h1>LOG IN</h1> 
@@ -35,9 +35,9 @@
                         <div class="alert alert-<%= key %>"><%= value %></div>
                         <% end %>
 						<%= f.text_field :email, class: "form-control", id: "reg_email", placeholder: "Email" %>
-						<br>
+					
 						<%= f.password_field :password, class: "form-control", id: "reg_password", placeholder: "Password" %>
-						<br>
+						
 						<%= f.submit "CLICK!", class: "login-button" %>
 					</div>
 				</div>
