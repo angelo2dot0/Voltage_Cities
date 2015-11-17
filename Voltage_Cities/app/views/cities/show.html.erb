@@ -28,78 +28,69 @@
       </div>
     </div>
 
-
     <div class="cities-bg">
-      <div class="text-center" style="padding:60px 0">
+      <div class="text-center" style="padding:50px 0">
         <div class="map" id="map<%=@city.slug%>"></div>
-        <br>
+
+
+        <section class="block-parallax-1  block-parallax-2">
+
+          <section style="min-height:400px;">
+            
+           <div class="container">
+             <br>
+             <br>
+             <br>
+             <main-button><%= link_to "ADD POST", new_city_post_path(@city), class: "main-button" %> </main-button>
+           </div>
+           <br>
+           <div class="container">
+            <h3><% if @posts.count==0 %>
+              No Posts
+              <% else %> 
+              <%=@posts.count%> Posts</h3>
+              
+              <div class="row grid-divider">
+                <%@postsR.each do |post| %> 
+
+                <div class="col-sm-4">
+                  <!-- <div class="white-box"> -->
+                  <div class="col-padding white-box">
+                   
+                   <a><%= link_to user_path(post.user_id, post) do %>
+                    <h5><%=post.user.username%> </h5>
+                    <% end %>
+                  </a>
+
+                  <a><%= link_to city_post_path(post.city_id, post) do %>
+                    <h5><%=post.title%></h5>
+                    <% end %> 
+                  </a>
+                  
+                  <a><%= link_to city_path(post.city_id) do %>
+                   <h5><%=post.city.name%></h5>
+                   <% end %>
+                 </a>
+
+                 <br>
+                 
+                 <h5><%= truncate post.content, length: 20    %>
+
+                  <br>
+                  <br>
+                  <%= link_to "READ MORE", city_post_path(post.city_id, post) %>
+                </h5>
+                <br>
+                <br>
+                
+              </div>
+            </div>
+            <% end %>
+          </div>
+          <% end %>
         </div>
       </div>
     </div>
-
-<section class="block-parallax-1  block-parallax-2">
-
-    <section style="min-height:400px;">
-      <div class="md-box">
-             <div class="container">
-             <br>
-             <br>
-          <main-button><%= link_to "ADD POST", new_city_post_path(@city), class: "main-button" %> </main-button>
-          </div>
-            <br>
-         <div class="container">
-            <h3><% if @posts.count==0 %>
-            No Posts
-            <% else %> 
-            <%=@posts.count%> Posts</h3>
-          
-                <div class="row grid-divider">
-                <%@postsR.each do |post| %> 
-
-                    <div class="col-sm-4">
-                        <!-- <div class="white-box"> -->
-                            <div class="col-padding white-box">
-                               
-                                <a><%= link_to city_post_path(post.city_id, post) do %>
-                                <%=post.title%>
-                                <% end %>
-                                </a>
-                            <br>
-                                <a>
-                                <%= link_to city_path(post.city_id) do %>
-                                <%=post.city.name%>
-                                <% end %>
-                                </a>
-                            <h4><%= truncate post.content, length: 60%><br>
-                            <%= link_to "READ MORE", city_post_path(post.city_id, post) %>
-
-                            </h4>
-                            <br>
-                            
-                            </div>
-                        </div>
-                    <% end %>
-                    </div>
-                <% end %>
-                </div>
-      </div>
-    </section>
+  </section>
 </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       
