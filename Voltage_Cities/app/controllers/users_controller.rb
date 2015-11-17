@@ -11,7 +11,8 @@ end
 		@current_user = current_user
 		User.find_each(&:save)
 		@user = User.friendly.find(params[:id])
-    	@posts = @user.posts 
+		@posts = @user.posts
+		@count= Post.select("city_id" ).where("user_id = #{@user.id}").group("city_id") 
     	@postsR= @posts.reverse
     	if current_user!=nil
     		@current_user = current_user

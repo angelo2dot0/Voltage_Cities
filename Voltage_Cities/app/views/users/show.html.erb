@@ -36,13 +36,15 @@
         <h3>  USERNAME: <%= @user.username %> <br>
           CURRENT CITY: <%= @user.current_city %> <br>
           JOINED: <%= local_time_ago(@user.created_at) %> <br>
+          CONTRIBUTED TO: <% @count.count.each do |count| %>
+                <%=City.find(count[0]).name %> ,
+          <%end%>
         </h3> 
         <br>
         <main-button><% if @user.id == @current_user.id%>
         <%=link_to 'EDIT PROFILE', edit_user_path(@user), class: "main-button" %>
         <%end%>
       </main-button>
-    </div>
   </div>
 </div>
 </section>
@@ -54,10 +56,66 @@
            <div class="container-bottom">
              <br>
              <br>
-             <br>
-             <br>
-             <br>
-             <br>
+
+
+          <main-button><%= link_to "ADD POST", "/cities", 'data-no-turbolink' => true, class: "main-button" %> </main-button>
+          </div>
+            <br>
+         <div class="container">
+            <h3><% if @posts.count==0 %>
+            No Posts
+            <% else %> 
+            <%=@posts.count%> Posts</h3>
+          
+                <div class="row grid-divider">
+                <%@postsR.each do |post| %> 
+
+                    <div class="col-sm-4">
+                        
+                            <div class="col-padding white-box">
+                               
+                                <a><%= link_to city_post_path(post.city_id, post) do %>
+                                <%=post.title%>
+                                <% end %>
+                                </a>
+                            <br>
+                                <a>
+                                <%= link_to city_path(post.city_id) do %>
+                                <%=post.city.name%>
+                                <% end %>
+                                </a>
+                            <h4><%= truncate post.content, length: 60%><br>
+                            <%= link_to "READ MORE", city_post_path(post.city_id, post) %>
+
+                            </h4>
+                            <br>
+                                    <main-button><% if @user.id == @current_user.id%>
+                                    <%= link_to 'EDIT', edit_city_post_path(post.city, post), class: "extra-button" %> </main-button>
+                                    <% end %>
+                            </div>
+                        </div>
+                    <% end %>
+                    </div>
+                <% end %>
+                <div class="col-md-12 col-xs-12" align="center">
+                <% @count.count.each do |count| %>
+                  <main-button>
+                      <%if count[1] ==1 %>
+                      <a class: "main-button" style="color: yellow"><%=City.find(count[0]).name %> : <%=count[1]%> post </a>
+                      <%elsif count[1] > 1  %>
+                        <a class: "main-button" style="color: yellow"><%=City.find(count[0]).name %> : <%=count[1]%> posts </a>
+                    <%end%>
+                    /
+                  </main-button>
+                <%end%>
+                </div>
+          </div>
+      </div>
+    </section>
+</section>
+
+    <br>
+            
              </div>
              </div>
              </section>
