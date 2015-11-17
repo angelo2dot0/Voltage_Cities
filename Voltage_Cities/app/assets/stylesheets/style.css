@@ -326,6 +326,24 @@ background-image:url(logo.gif);
     padding: 20px 20px;
 }
 
+.color-box {
+  background: blue;
+      min-width: 400px;
+      max-width: 400px;
+      min-height: 400px;
+      max-height: 400px;     
+     
+      margin-bottom: 30px;
+    }
+}
+  .white-box {
+      background: white;
+      padding-top: 60px;
+      max-height: 400px;
+      max-width: 300px;
+      margin-bottom: 30px;
+    }
+
 
 #profile-header {
 	background: url(login-bg.jpg) no-repeat center center fixed;
