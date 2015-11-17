@@ -380,10 +380,12 @@ border: none;
     height: 200px;
 }
 
-
-
-
 #map {
   height: 350px;
-  width: 100%;
+dth: 100%;
+}
+
+.map {
+  height: 350px;
+dth: 100%;
 }

@@ -1,0 +1,14 @@
+
+<%= form_for [@city,@post, @comment] do |f| %>
+<% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
+  
+  <h1> New Post</h1>
+    <%= f.text_field :content, placeholder: "Your comment here" %> 
+  
+
+	 <%= f.submit "Add Comment" %>
+<% end %>
+
+The current user is <%=@current_user%>
