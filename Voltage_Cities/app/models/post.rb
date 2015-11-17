@@ -4,4 +4,9 @@ class Post < ActiveRecord::Base
 
 	validates :title, presence: true
 	validates :content, presence: true, length: { in: 1..200 } 
+
+	acts_as_taggable
+
 end
+
+

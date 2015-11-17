@@ -1,4 +1,12 @@
 class PostsController < ApplicationController
+	def index
+		if params[:tag]
+			@posts = Post.tagged_with(params[:tag])
+		else
+			@posts = Post.all
+		end 
+	end
+
 	def show
 		@city = City.friendly.find(params[:city_id])
 		#@user = User.find(params[:user_id])
@@ -43,7 +51,7 @@ class PostsController < ApplicationController
 	def update
 		@post = Post.find(params[:id])
 		@city = City.friendly.find(params[:city_id])
-		if @post.update_attributes(params.require(:post).permit(:title, :content))
+		if @post.update_attributes(params.require(:post).permit(:title, :content, :tag_list))
 			redirect_to city_post_path(@city,@post)
 		else
 			flash[:error] = 'Title or content must not be empty'
