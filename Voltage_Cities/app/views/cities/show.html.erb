@@ -19,45 +19,75 @@
           </ul>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav pull-right">
-              <li class=""><a href="/">LOG OUT</a></li>
+              <% if @current_user %>
+              <li class=""><%= link_to "LOGOUT", logout_path, method: :delete%></li>
             </ul>
+            <%end%>
           </div>
         </nav>
       </div>
     </div>
+
+
     <div class="cities-bg">
       <div class="text-center" style="padding:60px 0">
         <div id="map"></div>
         <br>
-
-        <div class="page-header">  
-          <%= @city.name %>    
-          <% if @posts.count==0 %>
-          No Posts
-          <% else %> 
-          <%=@posts.count%> Posts
-          <div class="row grid-divider">
-            <%@postsR.each do |post| %> 
-            <div class="col-sm-4">
-              <div class="col-padding">
-                <h3><%= link_to user_path(post.user) do %>
-                  <%=post.user.username%>
-                  <% end %>
-                </h3>
-                <h2><%= link_to city_post_path(@city, post) do %>
-                  <%=post.title%>
-                  <% end %>
-                </h2>
-                <p><%=post.content%></p>
-              </div>
-            </div>
-            <% end %>
-          </div>
-          <% end %>
         </div>
-        <div>
-         <%= link_to "Add Post", new_city_post_path(@city) %>
-       </div>
+      </div>
+    </div>
+
+<section class="block-parallax-1  block-parallax-2">
+
+    <section style="min-height:400px;">
+      <div class="md-box">
+             <div class="container">
+             <br>
+             <br>
+          <main-button><%= link_to "ADD POST", new_city_post_path(@city), class: "main-button" %> </main-button>
+          </div>
+            <br>
+         <div class="container">
+            <h3><% if @posts.count==0 %>
+            No Posts
+            <% else %> 
+            <%=@posts.count%> Posts</h3>
+          
+                <div class="row grid-divider">
+                <%@postsR.each do |post| %> 
+
+                    <div class="col-sm-4">
+                        <!-- <div class="white-box"> -->
+                            <div class="col-padding white-box">
+                               
+                                <a><%= link_to city_post_path(post.city_id, post) do %>
+                                <%=post.title%>
+                                <% end %>
+                                </a>
+                            <br>
+                                <a>
+                                <%= link_to city_path(post.city_id) do %>
+                                <%=post.city.name%>
+                                <% end %>
+                                </a>
+                            <h4><%= truncate post.content, length: 60%><br>
+                            <%= link_to "READ MORE", city_post_path(post.city_id, post) %>
+
+                            </h4>
+                            <br>
+                            
+                            </div>
+                        </div>
+                    <% end %>
+                    </div>
+                <% end %>
+                </div>
+      </div>
+    </section>
+</section>
+
+
+
 
 
 
