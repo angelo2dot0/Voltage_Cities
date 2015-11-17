@@ -21,40 +21,28 @@
 </div>
 
 <div class="signup-bg">
-  <div class="text-center" style="padding:100px 0">
-    <%= form_for @user, :html =>{ :multipart => true } do |f| %>
-    <div class="logo">SIGN UP</div> 
-    <div class="signup-background" id="signup"></div>
-    <div class="container">
-     <div class="col-sm-4 col-sm-offset-4">
-       <div class="well">
-        <% if @user.errors.any? %>
-          <div id="error_explanation">
-            <h2 class="error-warning">
-              <%= pluralize(@user.errors.count, "error") %> prohibited
-              this owner from being saved:
-            </h2>
-            <ul>
-              <% @user.errors.full_messages.each do |msg| %>
-              <li class="error-message"><%= msg %></li>
-              <% end %>
-            </ul>
-          </div>
-        <% end %>
-        <%= f.text_field :username, class: "form-control", id: "reg_username", placeholder: "User Name" %>
-        <br>
-        <%= f.text_field :artist_name, class: "form-control", id: "reg_artist_name",  placeholder: "Artist Name" %>
-        <br>
-        <%= f.text_field :current_city, class: "form-control", id: "reg_current_city", placeholder: "Current City" %>
-        <br>
-        <%= f.text_field :email, class: "form-control", id: "reg_email", placeholder: "Email" %>
-        <br>
-        <%= f.password_field :password, class: "form-control", id: "reg_password", placeholder: "Password" %>
-        <br>
-        <%= f.file_field :avatar %>    
-        <%= f.submit "CLICK!", class: "login-button" %>
-      </div>
-    </div>
+  <div class="text-center" style="padding:90px 0">
+  <%= form_for @user, :html =>{ :multipart => true } do |f| %>
+    <h1>SIGN UP</h1> 
+      <div class="signup-background" id="signup"></div>
+       <div class="container">
+           <div class="col-sm-4 col-sm-offset-4">
+               <div class="well">
+                      <%= f.text_field :username, class: "form-control", id: "reg_username", placeholder: "User Name" %>
+                      
+                      <%= f.text_field :artist_name, class: "form-control", id: "reg_artist_name",  placeholder: "Artist Name" %>
+                      
+                      <%= f.text_field :current_city, class: "form-control", id: "reg_current_city", placeholder: "Current City" %>
+                      
+                      <%= f.text_field :email, class: "form-control", id: "reg_email", placeholder: "Email" %>
+                      
+                      <%= f.password_field :password, class: "form-control", id: "reg_password", placeholder: "Password" %>
+                      <%= f.file_field :avatar %>
+                  <%= f.submit "CLICK!", class: "login-button" %>
+                </div>
+            </div>
+        </div>
+  <% end %>
   </div>
   <% end %> 
 </div>

@@ -1,75 +1,97 @@
 <div class="navbar-wrapper">
-    <div class="container-fluid">
-        <nav class="navbar navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="/">VOLTAGE CITIES</a>
-                </div>
-                
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav pull-right">
-                        <% if @current_user %>
-                        <li class=""><%= link_to "LOGOUT", logout_path, method: :delete%></li>
-
-                        <%end%>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
-</div>
-
-<div class="profile-bg">
-    <div class="text-center" style="padding:120px 0">
+  <div class="container-fluid">
+    <nav class="navbar navbar-fixed-top">
       <div class="container">
-            <div class="col-md-12 col-xs-12" align="center">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">VOLTAGE CITIES</a>
+        </div>
 
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav pull-right">
+            <% if @current_user %>
+            <li class=""><%= link_to "LOGOUT", logout_path, method: :delete%></li>
 
-                  <div class="outter"><%= image_tag @user.avatar.url(:thumb), :class => 'image-circle'%></div>  
-                  <h1>  Welcome, <%= @user.artist_name %> </h1>
-                  <h2>  USERNAME: <%= @user.username %> <br>
-                        CURRENT CITY: <%= @user.current_city %> <br>
-                        JOINED: <%= local_time_ago(@user.created_at) %> <br>
-                  <h2> 
-                  <main-button><%= link_to "ADD POST", "/cities", class: "main-button" %> </main-button>
-            </div>
- </ul>
-
- <% if @user.id == @current_user.id%>
-  <%=link_to 'Edit your profile', edit_user_path(@user) %>
- <%end%>
-
-
-    <br>
-    <br>
-
-
-<div class="page-header">     
-    <% if @posts.count==0 %>
-        No Posts
-    <% else %> 
-      <div class="row grid-divider">
-          <%@posts.each do |post| %> 
-       		<div class="col-sm-4">
-	      		<div class="col-padding">
-	        		<h3><%= link_to city_post_path(post.city_id, post) do %>
-  					<%=post.title%>
-  					<% end %>
-  					</h3>
-	        		<h2>
-	        			<%= link_to city_path(post.city_id) do %>
-	        			<%=post.city.name%>
-	        			<% end %>
-	        		</h2>
-	        		<p><%=truncate post.content , length: 160%></p>
-              <%= link_to 'read more', city_post_path(post.city_id, post) %>
-	      		</div>
-	    	</div>
-          <% end %>
-    	</div>
-    	<% end %>
+            <%end%>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
 </div>
+
+<section class="block-parallax-1">
+  <div class="profile-bg">
+    <div class="col-md-12 col-xs-12" align="center">
+      <div class="center-block">
+        <div class="outter"><%= image_tag @user.avatar.url(:thumb), :class => 'image-circle'%></div>  
+        <h1>  Welcome, <%= @user.artist_name %> </h1>
+        <h3>  USERNAME: <%= @user.username %> <br>
+          CURRENT CITY: <%= @user.current_city %> <br>
+          JOINED: <%= local_time_ago(@user.created_at) %> <br>
+        </h3> 
+
+        <main-button><% if @user.id == @current_user.id%>
+        <%=link_to 'EDIT PROFILE', edit_user_path(@user), class: "main-button" %>
+        <%end%>
+      </main-button>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<section class="block-parallax-1  block-parallax-2">
+
+    <section style="min-height:400px;">
+      <div class="md-box">
+             <div class="container">
+             <br>
+             <br>
+          <main-button><%= link_to "ADD POST", "/cities", class: "main-button" %> </main-button>
+          </div>
+            <br>
+         <div class="container">
+            <h3><% if @posts.count==0 %>
+            No Posts
+            <% else %> 
+            <%=@posts.count%> Posts</h3>
+          
+                <div class="row grid-divider">
+                <%@postsR.each do |post| %> 
+
+                    <div class="col-sm-4">
+                        <!-- <div class="white-box"> -->
+                            <div class="col-padding white-box">
+                               
+                                <a><%= link_to city_post_path(post.city_id, post) do %>
+                                <%=post.title%>
+                                <% end %>
+                                </a>
+                            <br>
+                                <a>
+                                <%= link_to city_path(post.city_id) do %>
+                                <%=post.city.name%>
+                                <% end %>
+                                </a>
+                            <h4><%= truncate post.content, length: 60%><br>
+                            <%= link_to "READ MORE", city_post_path(post.city_id, post) %>
+
+                            </h4>
+                            <br>
+                                    <main-button><% if @user.id == @current_user.id%>
+                                    <%= link_to 'EDIT', edit_city_post_path(post.city, post), class: "extra-button" %> </main-button>
+                                    <% end %>
+                            </div>
+                        </div>
+                    <% end %>
+                    </div>
+                <% end %>
+                </div>
+      </div>
+    </section>
+</section>
+
