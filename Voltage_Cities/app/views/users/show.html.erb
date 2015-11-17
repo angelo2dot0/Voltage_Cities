@@ -32,6 +32,9 @@
         <h3>  USERNAME: <%= @user.username %> <br>
           CURRENT CITY: <%= @user.current_city %> <br>
           JOINED: <%= local_time_ago(@user.created_at) %> <br>
+          CONTRIBUTED TO: <% @count.count.each do |count| %>
+                <%=City.find(count[0]).name %> ,
+          <%end%>
         </h3> 
         <br>
         <br>
@@ -39,7 +42,6 @@
         <%=link_to 'EDIT PROFILE', edit_user_path(@user), class: "main-button" %>
         <%end%>
       </main-button>
-    </div>
   </div>
 </div>
 </section>
@@ -91,7 +93,19 @@
                     <% end %>
                     </div>
                 <% end %>
+                <div class="col-md-12 col-xs-12" align="center">
+                <% @count.count.each do |count| %>
+                  <main-button>
+                      <%if count[1] ==1 %>
+                      <a class: "main-button" style="color: yellow"><%=City.find(count[0]).name %> : <%=count[1]%> post </a>
+                      <%elsif count[1] > 1  %>
+                        <a class: "main-button" style="color: yellow"><%=City.find(count[0]).name %> : <%=count[1]%> posts </a>
+                    <%end%>
+                    /
+                  </main-button>
+                <%end%>
                 </div>
+          </div>
       </div>
     </section>
 </section>
