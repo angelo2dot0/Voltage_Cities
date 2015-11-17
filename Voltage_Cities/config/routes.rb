@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   end
 
   resources :cities do 
-    resources :posts , except: [:destroy]
+    resources :posts , except: [:destroy] do
+      resources :comments
+    end
   end 
 
   get "/signup", to: "users#new", as: "new_user"
