@@ -5,38 +5,36 @@
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+            
           </button>
           <a class="navbar-brand" href="/">VOLTAGE CITIES</a>
 
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class=" dropdown"><a href="/sessions" class="dropdown-toggle "  role="button" aria-haspopup="true" aria-expanded="false">PROFILE </a>
+            <li class=" dropdown"><a href="/" class="dropdown-toggle "  role="button" aria-haspopup="true" aria-expanded="false">PROFILE</a>
             </li>
           </ul>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav pull-right">
-              <% if @current_user %>
+ 
               <li class=""><%= link_to "LOGOUT", logout_path, method: :delete%></li>
             </ul>
-            <%end%>
           </div>
         </nav>
       </div>
     </div>
 
+    <div class="login-bg">
+      <div class="text-center" style="padding:60px">
 
-<section style="min-height:400px;">
-	<div class="md-box">
+
+
 	<div class="container">
 		<div class="row grid-divider">
 		
-		<h5> TAGS </h5>
-		
-		<br>
+		<h6> TAGS </h6>
+
 		<br>
 		<br>
 
@@ -64,7 +62,7 @@
 
                 		<br>
 							
-						<h5><%= truncate post.content, length: 60%>
+						<h5><%= truncate post.content, length: 20	%>
 
 						<br>
 						<br>
@@ -79,6 +77,9 @@
 		</div>
 		</div>
 	</div>
+
+	</div>
+    </div>
 </section>
 
 		
