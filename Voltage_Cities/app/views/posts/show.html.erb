@@ -9,7 +9,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">VOLTAGE CITIES</a>
+          <a class="navbar-brand" href="/cities">VOLTAGE CITIES</a>
         </div>
         
         <div id="navbar" class="navbar-collapse collapse">
@@ -28,15 +28,17 @@
       </div>
     </div>
 
-<section class="block-parallax-1">
-  <div class="profile-bg">
+
+  <div class="post-bg">
     <div class="col-md-12 col-xs-12" align="center">
       <div class="center-block">
-        <div class="outter"><%= image_tag @user.avatar.url(:thumb), :class => 'image-circle'%></div>  
-        <h1>  <%= @user.artist_name %> </h1>
-        <h3>  <%=@post.title%> <br>
-          <%=@post.content%> <br>
-          <%=raw tag_links@post.tag_list%> <br>
+        <div class="color-box">
+        <br>
+        <br>
+        <h2>  <%=@post.title%> </h2> 
+          <h3><%=@post.content%> </h3>
+          <h3> USERNAME: <%= @user.artist_name %> </h3>
+          <h3>TAGS:   <%=raw tag_links@post.tag_list%> </h3><br>
         </h3> 
         <div>
           <%@post.comments.each do |comment| %>
@@ -45,14 +47,18 @@
           <%end%>
         </div>
         <%=link_to 'COMMENT POST', new_city_post_comment_path(@city, @post), class: "main-button" %>
+
+		<br><br>
+
         <main-button><% if @user.id == @current_user.id%>
         <%=link_to 'EDIT POST', edit_city_post_path(@city, @post), class: "main-button" %>
         <%=link_to'DELETE POST', delete_city_post_path(@city, @post), method: :delete, data:{confirm: "#{@user.username} are you sure you to delete this post?" },class: "main-button" %>
+        
         <%end%>
       </main-button>
     </div>
   </div>
 </div>
-</section>
+
 
 

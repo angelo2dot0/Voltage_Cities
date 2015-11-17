@@ -15,6 +15,16 @@ h1 {
   line-height: 150%;
 }
 
+h7 {
+  font-family: 'Raleway', sans-serif;
+  color: black;
+  font-size: 22px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  letter-spacing: 0px;
+  line-height: 130%;
+}
+
 h2 {
   font-family: 'Raleway', sans-serif;
   color: white;
@@ -71,7 +81,7 @@ p {
 
 a {
       padding-top: 10px;
-      color: #999999;
+      color: black;
       text-transform: uppercase;
 
 }
@@ -91,12 +101,12 @@ background-image:url(logo.gif);
 /* set background image per page */
 .cities-bg {
   background-attachment:fixed;
-  background: url(cities-bg.jpg) no-repeat center center fixed;
+  background: url(cities-bg.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 100vh;
+
 }
 
 /* set background image per page */
@@ -268,6 +278,8 @@ background-image:url(logo.gif);
     width: 60px;
     height: 60px;
     border: 3px solid white; 
+    margin-right: 20px;
+    margin-left: 20px;
 }
 
 .main-button:hover {
@@ -326,6 +338,24 @@ background-image:url(logo.gif);
     padding: 20px 20px;
 }
 
+.color-box {
+  background: blue;
+      min-width: 400px;
+      max-width: 400px;
+      min-height: 400px;
+      max-height: 400px;     
+     
+      margin-bottom: 30px;
+    }
+}
+  .white-box {
+      background: white;
+      padding-top: 60px;
+      max-height: 400px;
+      max-width: 300px;
+      margin-bottom: 30px;
+    }
+
 
 #profile-header {
 	background: url(login-bg.jpg) no-repeat center center fixed;
@@ -340,51 +370,14 @@ background-image:url(logo.gif);
 
 
 
-.navbar, .dropdown-menu{
-background:rgba(255,255,255,0.25);
+.navbar{
+background: yellow;
+font-color: black;
+font-weight: bold;
 border: none;
 
 }
 
-.nav>li>a, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover, .dropdown-menu>li>a, .dropdown-menu>li{
-  border-bottom: 3px solid transparent;
-}
-.nav>li>a:focus, .nav>li>a:hover,.nav .open>a, .nav .open>a:focus, .nav .open>a:hover, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
-  border-bottom: 3px solid transparent;
-  background: none;
-}
-.navbar a, .dropdown-menu>li>a, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
- color: #fff;
-}
-.dropdown-menu{
-      -webkit-box-shadow: none;
-    box-shadow:none;
-}
-
-.nav li:hover:nth-child(8n+1), .nav li.active:nth-child(8n+1){
-  border-bottom: #C4E17F 5px solid;
-}
-.nav li:hover:nth-child(8n+2), .nav li.active:nth-child(8n+2){
-  border-bottom: #F7FDCA 5px solid;
-}
-.nav li:hover:nth-child(8n+3), .nav li.active:nth-child(8n+3){
-  border-bottom: #FECF71 3px solid;
-}
-.nav li:hover:nth-child(8n+4), .nav li.active:nth-child(8n+4){
-  border-bottom: #F0776C 5px solid;
-}
-.nav li:hover:nth-child(8n+5), .nav li.active:nth-child(8n+5){
-  border-bottom: #DB9DBE 5px solid;
-}
-.nav li:hover:nth-child(8n+6), .nav li.active:nth-child(8n+6){
-  border-bottom: #C49CDE 5px solid;
-}
-.nav li:hover:nth-child(8n+7), .nav li.active:nth-child(8n+7){
-  border-bottom: #669AE1 5px solid;
-}
-.nav li:hover:nth-child(8n+8), .nav li.active:nth-child(8n+8){
-  border-bottom: #62C2E4 5px solid;
-}
 
 
 .image-circle{
@@ -409,6 +402,7 @@ dth: 100%;
 }
 
 .map {
+  
   height: 350px;
-dth: 100%;
+
 }
