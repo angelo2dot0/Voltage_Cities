@@ -27,6 +27,10 @@
   <div class="profile-bg">
     <div class="col-md-12 col-xs-12" align="center">
       <div class="center-block">
+      <br>
+      <br>
+      <br>
+      <br>
         <div class="outter"><%= image_tag @user.avatar.url(:thumb), :class => 'image-circle'%></div>  
         <h1>  Welcome, <%= @user.artist_name %> </h1>
         <h3>  USERNAME: <%= @user.username %> <br>
@@ -36,7 +40,6 @@
                 <%=City.find(count[0]).name %> ,
           <%end%>
         </h3> 
-        <br>
         <br>
         <main-button><% if @user.id == @current_user.id%>
         <%=link_to 'EDIT PROFILE', edit_user_path(@user), class: "main-button" %>
@@ -48,12 +51,12 @@
 
 
 <section class="block-parallax-1  block-parallax-2">
+          <section style="min-height:400px;">
+                <div class="profile2-bg" repeat>
+           <div class="container-bottom">
+             <br>
+             <br>
 
-    <section style="min-height:400px;">
-      <div class="md-box">
-             <div class="container">
-             <br>
-             <br>
           <main-button><%= link_to "ADD POST", "/cities", 'data-no-turbolink' => true, class: "main-button" %> </main-button>
           </div>
             <br>
@@ -109,4 +112,14 @@
       </div>
     </section>
 </section>
+
+
+             <br>
+             <br>
+             <br>
+             <br>
+             </div>
+             </div>
+             </section>
+             </section>
 

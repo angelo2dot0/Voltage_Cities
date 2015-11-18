@@ -43,6 +43,7 @@ gem 'friendly_id', '~> 5.1.0'
 gem 'will_paginate'
 
 gem 'acts-as-taggable-on', '~> 3.4'
+gem 'omniauth-twitter'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

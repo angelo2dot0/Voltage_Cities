@@ -1,9 +1,14 @@
 class UsersController < ApplicationController
 
 	def index
-	end
+	@current_user = current_user
+	City.find_each(&:save)
+	@cities = City.all
+	render :index
+end
 
 	def show
+		@current_user = current_user
 		User.find_each(&:save)
 		@user = User.friendly.find(params[:id])
 		@posts = @user.posts
@@ -16,12 +21,15 @@ class UsersController < ApplicationController
     	end
 	end
 
+
 	def edit
+		@current_user = current_user
 		@user = User.friendly.find(params[:id])
 		render :edit
 	end
 
 	def update
+		@current_user = current_user
 		@user = User.friendly.find(params[:id])
 		@user.update_attributes(params.require(:user).permit(:artist_name, :current_city, :avatar))
 		redirect_to user_path(@user) 
