@@ -117,7 +117,7 @@ background-image:url(logo.gif);
 }
 /* set background image per page */
 .cities-bg {
-  background: url(cities-bg.jpg);
+  background: url(http://i.imgur.com/AyEvy4P.jpg);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -127,7 +127,7 @@ background-image:url(logo.gif);
 
 /* set background image per page */
 .signup-bg {
-  background: url(signup-bg.jpg);
+  background: url(http://i.imgur.com/qNWf1zG.jpg);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -137,7 +137,7 @@ background-image:url(logo.gif);
 /* set background image per page */
 .login-bg {
   background-attachment:fixed;
-  background: url(login-bg.jpg) ;
+  background: url(http://i.imgur.com/V1WvC3T.jpg) ;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -148,7 +148,7 @@ background-image:url(logo.gif);
 /* set background image per page */
 .welcome-bg {
   background-attachment:fixed;
-  background: url(welcome-bg.jpg) no-repeat center center fixed;
+  background: url(http://i.imgur.com/scIeth0.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -160,7 +160,7 @@ background-image:url(logo.gif);
 /* set background image per page */
 .profile-bg {
   background-attachment:fixed;
-  background: url(profile-bg.jpg) no-repeat center center;
+  background: url(http://imgur.com/xusua5Y) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -170,7 +170,7 @@ background-image:url(logo.gif);
 
 /* set background image per page */
 .profile2-bg {
-  background: url(profile2-bg.jpg);
+  background: url(http://i.imgur.com/aX8cM8U.jpg);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -181,7 +181,7 @@ background-image:url(logo.gif);
 /* set background image per page */
 .profileedit-bg {
   background-attachment:fixed;
-  background: url(profileedit-bg.jpg) no-repeat center center;
+  background: url(http://i.imgur.com/d8nNvK2.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -191,7 +191,7 @@ background-image:url(logo.gif);
 
 /* set background image per page */
 .post-bg {
-  background: url(post-bg.jpg);
+  background: url(http://i.imgur.com/J1D3VBb.jpg);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
