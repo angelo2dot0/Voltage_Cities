@@ -56,12 +56,12 @@
            <div class="container-bottom">
              <br>
              <br>
-
-
+             <br>
+         
+         <div class="container">
+             <div class= "centerbutton">
           <main-button><%= link_to "ADD POST", "/cities", 'data-no-turbolink' => true, class: "main-button" %> </main-button>
           </div>
-            <br>
-         <div class="container">
             <h3><% if @posts.count==0 %>
             No Posts
             <% else %> 
@@ -78,17 +78,17 @@
                                 <%=post.title%>
                                 <% end %>
                                 </a>
-                            <br>
+                          
                                 <a>
                                 <%= link_to city_path(post.city_id) do %>
-                                <%=post.city.name%>
+                                <h5><%=post.city.name%></h5>
                                 <% end %>
                                 </a>
-                            <h4><%= truncate post.content, length: 60%><br>
+                            <h5><%= truncate post.content, length: 90%><br>
                             <%= link_to "READ MORE", city_post_path(post.city_id, post) %>
 
-                            </h4>
-                            <br>
+                            </h5>
+                            
                                     <main-button><% if @user.id == @current_user.id%>
                                     <%= link_to 'EDIT', edit_city_post_path(post.city, post), class: "extra-button" %> </main-button>
                                     <% end %>
@@ -108,6 +108,7 @@
                     /
                   </main-button>
                 <%end%>
+                </div>
                 </div>
           </div>
       </div>

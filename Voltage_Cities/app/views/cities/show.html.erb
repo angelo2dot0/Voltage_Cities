@@ -41,8 +41,8 @@
              <br>
              <br>
              <main-button><%= link_to "ADD POST", new_city_post_path(@city), class: "main-button" %> </main-button>
-           </div>
-           <br>
+          
+        
            <div class="container">
             <h3><% if @posts.count==0 %>
               No Posts
@@ -85,6 +85,7 @@
             <% end %>
           </div>
           <% end %>
+        </div>
         </div>
       </div>
     </div>

@@ -96,6 +96,10 @@ a {
 
 }
 
+.centerbutton {
+  position: center;
+}
+
 .center-block {
   position: center;
   padding-top: 0px;

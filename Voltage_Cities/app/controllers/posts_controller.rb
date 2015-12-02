@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
 	def index
+		@current_user = current_user
 		if params[:tag]
 			@posts = Post.tagged_with(params[:tag])
 		else
@@ -10,6 +11,7 @@ class PostsController < ApplicationController
 	end
 
 	def show
+		@current_user = current_user
 		@city = City.friendly.find(params[:city_id])
 		#@user = User.find(params[:user_id])
 		@post = Post.find(params[:id])
@@ -46,6 +48,7 @@ class PostsController < ApplicationController
 	end 
 
 	def edit
+		@current_user = current_user
 		@post = Post.find(params[:id]) 
 		@city = City.friendly.find(params[:city_id])
 		render :edit
