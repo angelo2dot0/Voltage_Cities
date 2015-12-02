@@ -44,6 +44,7 @@ gem 'will_paginate'
 
 gem 'acts-as-taggable-on', '~> 3.4'
 
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -64,6 +65,11 @@ group :development do
 
 
   gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+group :production do
+  gem 'rails_12factor'
+
+end
 
 end
 
