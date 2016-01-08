@@ -144,7 +144,8 @@ background-image:url(logo.gif);
 /* set background image per page */
 .welcome-bg {
   background-attachment:fixed;
-  background: url(welcome-bg.jpg) no-repeat center center fixed;
+  background: url(post-bg.jpg) no-repeat center center fixed;
+  background-color: #00ffaa;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -152,6 +153,12 @@ background-image:url(logo.gif);
   height: 100vh;
 }
 
+.welcome-title {
+  color: black;
+  font-size: 45px;  
+  margin-left:20px;
+  margin-right:20px;
+}
 
 /* set background image per page */
 .profile-bg {
@@ -349,6 +356,7 @@ background-image:url(logo.gif);
 
 }
 
+
 .well {
     background: #ffffff;
     border-color: white;
@@ -366,6 +374,7 @@ background-image:url(logo.gif);
     border-radius: 0px;
     margin-bottom: 0px;
     padding: 20px 20px;
+    border-radius: 10px;
 }
 
 .color-box {
