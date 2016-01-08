@@ -56,11 +56,8 @@
           <%=link_to 'COMMENT', new_city_post_comment_path(@city, @post), class: "main-button" %>
           <main-button><% if @user.id == @current_user.id%>
           <%=link_to 'EDIT', edit_city_post_path(@city, @post), class: "main-button" %>
-          <%=link_to'DELETE', delete_city_post_path(@city, @post), method: :delete, data:{confirm: "#{@user.username} are you sure you to delete this post?" },class: "main-button" %>
-          <br>
-          <br>
-          <br>
-          <br>
+
+          <%=link_to'Delete', delete_city_post_path(@city, @post), method: :delete, data:{confirm: "#{@user.username} are you sure you to delete this post?" },class: "main-button" %>
           <%end%>
         </main-button>
 
