@@ -31,8 +31,27 @@ end
 	def update
 		@current_user = current_user
 		@user = User.friendly.find(params[:id])
-		@user.update_attributes(params.require(:user).permit(:artist_name, :current_city, :avatar))
-		redirect_to user_path(@user) 
+		p params.require(:user).permit(:artist_name)['artist_name']
+		p  @user
+		p  params.require(:user).permit(:oldpassword)
+		if @user.try(:authenticate, params.require(:user).permit(:oldpassword)['oldpassword'])
+
+			if @user.update_attributes(params.require(:user).permit(:artist_name, :current_city, :password, :avatar))
+				p 1111111111111111111
+				redirect_to user_path(@user) 
+			else
+		        p 'not UPDATING'
+		        p  current_user.errors.inspect
+		        render :edit
+    
+			end
+		else
+			p 'wrong password'
+			flash[:error] = "Old Password doesn't match, try again"
+			render :edit
+		end
+		
+		
 	end
 
 	def new

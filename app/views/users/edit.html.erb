@@ -26,18 +26,21 @@
 
 <div class="profileedit-bg">
     <div class="text-center" style="padding:90px 0">
-    <%= form_for @user, :html =>{ :multipart => true } do |f| %>
 
+    <%= form_for (@user), :html =>{ :multipart => true }, method: :patch do |f| %>
     <h1>EDIT PROFILE</h1> 
 
     <div class="editprofile-background" id="editprofile"></div>
     <div class="container">
       <div class="col-sm-4 col-sm-offset-4">
         <div class="well">
+          <% flash.each do |key, value| %>
+                        <div class="alert alert-<%= key %>"><%= value %></div>
+                        <% end %>
           <% if @user.errors.any? %>
           <div id="error_explanation">
             <h2 class="error-warning">
-              <%= pluralize(@user.errors.count, "error") %> prohibited
+              <%= pluralize(@user.errors.count, "errors") %> prohibited
               this owner from being saved:
             </h2>
             <ul>
@@ -51,6 +54,10 @@
           <%= f.text_field :artist_name, class: "form-control"%>
 
           <%= f.text_field :current_city, class: "form-control"%>
+
+          <%= f.password_field :oldpassword, class: "form-control", placeholder: "Old Password" %>
+
+          <%= f.password_field :password, class: "form-control", placeholder: "New Password" %>
 
           <%= f.file_field :avatar%>
 

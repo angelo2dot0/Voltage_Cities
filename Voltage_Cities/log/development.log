@@ -1,0 +1,149 @@
+
+
+Started GET "/" for ::1 at 2016-01-10 12:52:38 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (4.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 43716ms (Views: 43659.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-01-10 12:53:22 -0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 5447ms (Views: 5445.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/style.self-9eb04dec2233ba0234ebde28d4b975fae958e916d5142fb6eb5d97b5aec564b8.css?body=1" for ::1 at 2016-01-10 12:53:28 -0800
+
+
+Started GET "/assets/app.self-beeb2f7324b1b3f13270239e9b823d038e3e3262f6c07749070796ba98e5f6c5.js?body=1" for ::1 at 2016-01-10 12:53:28 -0800
+
+
+Started GET "/assets/welcome-bg.jpg" for ::1 at 2016-01-10 12:53:28 -0800
+
+
+Started GET "/signup" for ::1 at 2016-01-10 12:53:31 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (49.0ms)
+Completed 200 OK in 4536ms (Views: 4510.8ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/assets/signup-bg.jpg" for ::1 at 2016-01-10 12:53:35 -0800
+
+
+Started POST "/users" for ::1 at 2016-01-10 12:54:03 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XRjNK4gcsrrv5zACCq3KJL+E6IMJaUhmavYpwERBuvwnzjxP0nyCe8T9x1ncrsgnaPmrAlumgjh7OVwOI9OHIw==", "user"=>{"username"=>"Belladona", "artist_name"=>"Belladonita", "current_city"=>"San francisco", "email"=>"belladona@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"CLICK!"}
+  [1m[35m (1.0ms)[0m  BEGIN
+  [1m[36mUser Exists (1.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."id" IS NOT NULL) AND "users"."slug" = $1 LIMIT 1[0m  [["slug", "belladonita"]]
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Belladona' LIMIT 1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'belladona@gmail.com' LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  Rendered users/new.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 5110ms (Views: 4583.3ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/assets/signup-bg.jpg" for ::1 at 2016-01-10 12:54:08 -0800
+
+
+Started GET "/login" for ::1 at 2016-01-10 12:54:17 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 4382ms (Views: 4379.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/login-bg.jpg" for ::1 at 2016-01-10 12:54:22 -0800
+
+
+Started POST "/sessions" for ::1 at 2016-01-10 12:54:28 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gk3/RRqPo+5ov+mjv1BI6sAUgw2roExv+cv/La5aNff4mw4hQO+TL0OlHvhpU0rpF2nAjPlvhjHoBIrjycgIKA==", "user"=>{"email"=>"belladona@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"CLICK!"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "belladona@gmail.com"]]
+Redirected to http://localhost:3000/users/belladonita
+Completed 302 Found in 214ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/belladonita" for ::1 at 2016-01-10 12:54:29 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"belladonita"}
+  [1m[35mUser Load (1.5ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1000
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (1.5ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Rachella' AND "users"."id" != 1) LIMIT 1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."email" = 'br_bia@esi.dz' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Margaux' AND "users"."id" != 2) LIMIT 1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."email" = 'margaux@mail.com' AND "users"."id" != 2) LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Belladona' AND "users"."id" != 3) LIMIT 1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."email" = 'belladona@gmail.com' AND "users"."id" != 3) LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."slug" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["slug", "belladonita"]]
+  [1m[35mPost Load (1.5ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1  [["user_id", 3]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (1.5ms)[0m  [1mSELECT COUNT("posts"."city_id") AS count_city_id, city_id AS city_id FROM "posts" WHERE (user_id = 3) GROUP BY "posts"."city_id"[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = $1  [["user_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT("posts"."city_id") AS count_city_id, city_id AS city_id FROM "posts" WHERE (user_id = 3) GROUP BY "posts"."city_id"[0m
+  Rendered users/show.html.erb within layouts/application (129.0ms)
+Completed 200 OK in 5130ms (Views: 4957.9ms | ActiveRecord: 17.0ms)
+
+
+Started GET "/assets/missing-4edaead39c0d8f580d80858c02d7cac2fb8af67418b8130e71eec1bbadda7c06.png" for ::1 at 2016-01-10 12:54:34 -0800
+
+
+Started GET "/assets/profile-bg.jpg" for ::1 at 2016-01-10 12:54:34 -0800
+
+
+Started GET "/users/belladonita/edit" for ::1 at 2016-01-10 12:54:39 -0800
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"belladonita"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."slug" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["slug", "belladonita"]]
+  Rendered users/edit.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 4653ms (Views: 4648.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/editprofile-bg.jpg" for ::1 at 2016-01-10 12:54:44 -0800
+
+
+Started PATCH "/users/belladonita" for ::1 at 2016-01-10 12:54:59 -0800
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"w1NAp0LQB+jW60cuOVAn3ivBjPq5PGPRLM82x10FlvS5hbHDGLA3Kf3xsHXvUyXd/LzPe+vzqY89AEMJOperKw==", "user"=>{"artist_name"=>"Esmeralda", "current_city"=>"San francisco"}, "commit"=>"SAVE!", "id"=>"belladonita"}
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."slug" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["slug", "belladonita"]]
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Belladona' AND "users"."id" != 3) LIMIT 1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."email" = 'belladona@gmail.com' AND "users"."id" != 3) LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/users/belladonita
+Completed 302 Found in 22ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/users/belladonita" for ::1 at 2016-01-10 12:54:59 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"belladonita"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1000
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Rachella' AND "users"."id" != 1) LIMIT 1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."email" = 'br_bia@esi.dz' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Margaux' AND "users"."id" != 2) LIMIT 1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."email" = 'margaux@mail.com' AND "users"."id" != 2) LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Belladona' AND "users"."id" != 3) LIMIT 1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."email" = 'belladona@gmail.com' AND "users"."id" != 3) LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."slug" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["slug", "belladonita"]]
+  [1m[35mPost Load (1.0ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1  [["user_id", 3]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT("posts"."city_id") AS count_city_id, city_id AS city_id FROM "posts" WHERE (user_id = 3) GROUP BY "posts"."city_id"[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = $1  [["user_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT("posts"."city_id") AS count_city_id, city_id AS city_id FROM "posts" WHERE (user_id = 3) GROUP BY "posts"."city_id"[0m
+  Rendered users/show.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 4697ms (Views: 4651.7ms | ActiveRecord: 13.5ms)
+
+
+Started GET "/assets/profile-bg.jpg" for ::1 at 2016-01-10 12:55:04 -0800

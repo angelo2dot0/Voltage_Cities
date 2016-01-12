@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
 	def create
 		user_params = params.require(:user).permit(:email, :password)
 		@user = User.confirm(user_params)
+		p "THE USER IS ********** #{@user}"
 		if @user
 			login(@user)
 			redirect_to user_path (@user)
